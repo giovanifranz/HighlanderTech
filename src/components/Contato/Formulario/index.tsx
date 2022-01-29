@@ -1,4 +1,7 @@
 import { Formik } from 'formik'
+import { SetStateAction } from 'react'
+import axios from 'axios'
+
 import {
   Title,
   Formulario as FormularioComponent,
@@ -7,7 +10,11 @@ import {
   TextareaSection,
   Button
 } from './styles'
+import { useSelect } from '../../../hooks/useSelect'
+
 export function Formulario() {
+  const { setSelect } = useSelect()
+
   return (
     <section>
       <Title>Solicite seu orçamento!</Title>
@@ -21,12 +28,12 @@ export function Formulario() {
         }}
         onSubmit={async (values) => {
           const data = { ...values }
-          console.log(data) /*await axios({
+          axios({
             method: 'post',
             url: '/api/send-email',
             headers: { 'Content-Type': 'application/json' },
             data: JSON.stringify({ data })
-          })*/
+          })
         }}
       >
         <FormularioComponent className="grid-8">
@@ -36,7 +43,18 @@ export function Formulario() {
           </div>
           <div>
             <Label htmlFor="service">Serviço</Label>
-            <Input as="select" id="service" name="service">
+            <Input
+              as="select"
+              id="service"
+              name="service"
+              onChange={(event: {
+                target: { value: SetStateAction<string> }
+              }) =>
+                setSelect(
+                  event.target.value as 'sites' | 'maintenance' | 'mounting'
+                )
+              }
+            >
               <option value="sites">Sites</option>
               <option value="maintenance">Manutenção</option>
               <option value="mounting">Montagem</option>

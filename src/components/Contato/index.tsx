@@ -1,11 +1,14 @@
 import { Container } from './styles'
 import { Formulario } from './Formulario'
 import { Cards } from './Cards'
+import { SelectProvider } from '../../hooks/useSelect'
 export function Contato() {
   return (
-    <Container>
-      <Formulario />
-      <Cards />
-    </Container>
+    <SelectProvider>
+      <Container>
+        <Formulario />
+        <Cards />
+      </Container>
+    </SelectProvider>
   )
 }
