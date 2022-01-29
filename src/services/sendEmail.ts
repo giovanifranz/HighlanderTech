@@ -3,19 +3,19 @@ import sgMail from '@sendgrid/mail'
 type data = {
   service: string
   email: string
-  phone: string
-  name: string
-  message: string
+  telefone: string
+  nome: string
+  mensagem: string
 }
 
 export async function sendEmail(data: data) {
   if (process.env.NEXT_PUBLIC_SENDGRID_API_KEY !== undefined) {
     sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY)
     const msg = {
-      to: 'comercial@highlandertech.com.br',
+      to: 'giovanifranz151@gmail.com',
       from: 'comercial@highlandertech.com.br',
-      subject: `Nome: ${data.name} / Serviço: ${data.service}`,
-      html: `Telefone: ${data.phone} <br> E-mail: ${data.email} <br> Mensagem: ${data.message}`
+      subject: `Nome: ${data.nome} / Serviço: ${data.service}`,
+      html: `Telefone: ${data.telefone} <br> E-mail: ${data.email} <br> Mensagem: ${data.mensagem}`
     }
     await sgMail.send(msg).then(
       () => {

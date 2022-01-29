@@ -25,6 +25,9 @@ export const Formulario = styled(Form)`
 
   #service {
     padding: 0 5px;
+    border-radius: 5px;
+    border: 0.5px solid var(--black);
+    font-size: 0.875rem;
   }
 
   @media screen and (max-width: 768px) {
@@ -39,12 +42,6 @@ export const Label = styled.label`
   margin-bottom: 5px;
 `
 
-export const Input = styled(Field)`
-  border-radius: 5px;
-  border: 0.5px solid var(--black);
-  padding: 10px;
-  font-size: 0.875rem;
-`
 export const TextareaSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -54,6 +51,10 @@ export const TextareaSection = styled.section`
   textarea {
     height: 200px;
     margin-bottom: 45px;
+    border-radius: 5px;
+    border: 0.5px solid var(--black);
+    padding: 10px;
+    font-size: 0.875rem;
   }
 `
 
@@ -89,4 +90,10 @@ export const Title = styled.h1`
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
+`
+export const Input = styled(Field)`
+  border-radius: 5px;
+  border: 0.5px solid var(--black);
+  padding: 10px;
+  font-size: 0.875rem;
 `

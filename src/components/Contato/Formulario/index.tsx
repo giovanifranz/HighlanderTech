@@ -1,4 +1,5 @@
-import { Formik } from 'formik'
+import 'react-toastify/dist/ReactToastify.css'
+import { Field, Formik } from 'formik'
 import { SetStateAction } from 'react'
 import axios from 'axios'
 
@@ -10,40 +11,76 @@ import {
   TextareaSection,
   Button
 } from './styles'
+import { ToastContainer, toast } from 'react-toastify'
 import { useSelect } from '../../../hooks/useSelect'
 
 export function Formulario() {
-  const { setSelect } = useSelect()
+  const { select, setSelect } = useSelect()
 
   return (
     <section>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Title>Solicite seu orçamento!</Title>
+      <ToastContainer />
       <Formik
         initialValues={{
           nome: '',
-          service: '',
           email: '',
           telefone: '',
           mensagem: ''
         }}
         onSubmit={async (values) => {
-          const data = { ...values }
-          axios({
+          const data = { ...values, service: select }
+          console.log(data)
+
+          await axios({
             method: 'post',
             url: '/api/send-email',
             headers: { 'Content-Type': 'application/json' },
             data: JSON.stringify({ data })
           })
+            .then(() => {
+              toast.success('Email enviado com Sucesso!', {
+                position: 'top-right',
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined
+              })
+            })
+            .catch(() => {
+              toast.error('Tente novamente em alguns minutos!', {
+                position: 'top-right',
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined
+              })
+            })
         }}
       >
-        <FormularioComponent className="grid-8">
+        <FormularioComponent>
           <div>
             <Label htmlFor="nome">Nome</Label>
             <Input type="text" id="nome" name="nome" required />
           </div>
           <div>
             <Label htmlFor="service">Serviço</Label>
-            <Input
+            <Field
               as="select"
               id="service"
               name="service"
@@ -58,7 +95,7 @@ export function Formulario() {
               <option value="sites">Sites</option>
               <option value="maintenance">Manutenção</option>
               <option value="mounting">Montagem</option>
-            </Input>
+            </Field>
           </div>
           <div>
             <Label htmlFor="telefone">Telefone</Label>
@@ -70,7 +107,7 @@ export function Formulario() {
           </div>
           <TextareaSection>
             <Label htmlFor="mensagem">Mensagem</Label>
-            <Input as="textarea" id="mensagem" name="mensagem" required />
+            <Field as="textarea" id="mensagem" name="mensagem" required />
             <Button id="enviar" name="enviar" type="submit">
               Enviar
             </Button>
