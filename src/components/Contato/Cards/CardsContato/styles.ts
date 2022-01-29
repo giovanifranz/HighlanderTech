@@ -14,6 +14,7 @@ export const Card = styled.div`
   position: relative;
   margin-right: 10px;
   margin-top: 10px;
+  transition: all ease 0.3s;
 
   .Icon {
     margin-bottom: 20px;
