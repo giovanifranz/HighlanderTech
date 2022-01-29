@@ -17,8 +17,6 @@ export function Header() {
         <Nav>
           <Link href="/">Home</Link>
           <Link href="/quem-somos">Quem Somos</Link>
-          <Link href="/planos">Planos</Link>
-          <Link href="/portifolio">Portifolio</Link>
           <Link href="/contato">Contato</Link>
         </Nav>
       </Container>

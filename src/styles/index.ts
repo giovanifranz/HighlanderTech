@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
 html {
     @media (min-width: 1080px) {
@@ -30,6 +31,7 @@ body {
   color: var(--black);
   margin: 0;
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 `
 export const Container = styled.main`

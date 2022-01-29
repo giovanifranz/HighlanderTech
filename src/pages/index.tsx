@@ -1,6 +1,5 @@
-import type { NextPage } from 'next'
 import { FeatureRight, FeatureLeft } from '../components'
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <>
       <FeatureRight
@@ -24,5 +23,3 @@ const Home: NextPage = () => {
     </>
   )
 }
-
-export default Home

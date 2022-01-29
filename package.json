@@ -11,6 +11,7 @@
   "dependencies": {
     "@fontsource/inter": "^4.5.1",
     "@types/styled-components": "^5.1.21",
+    "formik": "^2.2.9",
     "next": "12.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",

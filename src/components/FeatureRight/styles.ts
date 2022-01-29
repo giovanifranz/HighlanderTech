@@ -62,6 +62,7 @@ export const Button = styled.button`
   right: 0;
   padding-right: 40px;
   margin-top: 30px;
+  transition: all ease 0.3s;
 
   p {
     margin-right: 8px;

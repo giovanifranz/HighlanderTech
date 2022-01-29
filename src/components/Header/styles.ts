@@ -13,13 +13,14 @@ export const Header = styled.header`
 export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  width: 400px;
+  width: 300px;
 
   a {
     text-decoration: none;
     color: var(--black);
     font-size: 1.15rem;
     font-weight: 500;
+    transition: all ease 0.3s;
   }
 
   a:hover {
