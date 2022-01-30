@@ -8,6 +8,10 @@ export const Header = styled.header`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   background-color: var(--white);
+
+  @media screen and (max-width: 768px) {
+    height: 144px;
+  }
 `
 
 export const Nav = styled.nav`
@@ -28,7 +32,7 @@ export const Nav = styled.nav`
   }
 
   @media screen and (max-width: 768px) {
-    display: none;
+    margin-top: 20px;
   }
 `
 
@@ -44,14 +48,8 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
     width: 375px;
-  }
-`
-
-export const Burguer = styled.div`
-  display: none;
-
-  @media screen and (max-width: 768px) {
-    display: block;
   }
 `

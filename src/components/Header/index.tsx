@@ -14,6 +14,7 @@ export function Header() {
             width={193}
           />
         </Link>
+
         <Nav>
           <Link href="/">Home</Link>
           <Link href="/quem-somos">Quem Somos</Link>
