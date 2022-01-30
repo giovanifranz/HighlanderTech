@@ -26,6 +26,10 @@ export const Nav = styled.nav`
   a:hover {
     opacity: 0.7;
   }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const Container = styled.div`
@@ -41,5 +45,13 @@ export const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 375px;
+  }
+`
+
+export const Burguer = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
   }
 `
