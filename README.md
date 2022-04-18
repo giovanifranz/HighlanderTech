@@ -1,21 +1,20 @@
 # Highlander Tech
 
-## Descrição
-
 Site oficial da Highlander Tech, desenvolvido em conjunto com o designer Iago Centenaro Paz. Com a proposta de desenvolver Sites, Landing Pages, Hotsites e Blogs estamos lançando nossos serviços no mercado.
 
-## Instalação
+### Instalação
 
 ```bash
-
 npm install
 # and
 npm run dev
-
 ```
 
-## Links
+### Visite:
 
-Site: https://www.highlandertech.com.br/
+<br />
 
-![Logo Highlander Tech](https://github.com/giovanifranz/HighlanderFirstModel/blob/main/public/Logo-Tech-AF-01.png?raw=true)
+<a href="https://www.highlandertech.com.br/">
+  <img src="https://raw.githubusercontent.com/giovanifranz/HighlanderTech/main/public/LogoHighlanderTech.png" alt="Logo HighlanderTech">
+</a>
+
