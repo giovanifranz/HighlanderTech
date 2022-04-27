@@ -1,4 +1,5 @@
-import { FeatureRight, FeatureLeft } from '../components'
+import { FeatureLeft, FeatureRight } from '../components'
+
 export default function Home() {
   return (
     <>

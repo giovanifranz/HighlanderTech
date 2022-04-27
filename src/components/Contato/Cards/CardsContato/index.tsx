@@ -1,6 +1,8 @@
 import { IconType } from 'react-icons'
 import { ThemeProvider } from 'styled-components'
-import { Card, Title, Text } from './styles'
+
+import { Card, Text, Title } from './styles'
+
 interface CardsContatoProps {
   icon: IconType
   title: string
@@ -8,15 +10,10 @@ interface CardsContatoProps {
   purple?: boolean
 }
 
-export default function CardsContato({
-  icon,
-  title,
-  description,
-  purple
-}: CardsContatoProps) {
+export default function CardsContato({ icon, title, description, purple }: CardsContatoProps) {
   const theme = {
     bg: purple ? '#E6D9FA' : 'transparent',
-    bgBorder: purple ? 'var(--purple-light)' : '#A9EAEE'
+    bgBorder: purple ? 'var(--purple-light)' : '#A9EAEE',
   }
 
   const Icon = icon

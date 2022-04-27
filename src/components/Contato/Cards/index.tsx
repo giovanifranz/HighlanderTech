@@ -1,15 +1,17 @@
-import { Title, Container, Content } from './styles'
-import {
-  SUA_DUVIDA,
-  SEU_PLANO,
-  SEU_SETUP,
-  SUA_VISAO,
-  SEU_PROBLEMA,
-  SEU_ORCAMENTO,
-  SUA_NECESSIDADE
-} from './Models'
 import { useEffect, useState } from 'react'
+
 import { useSelect } from '../../../hooks/useSelect'
+
+import {
+  SEU_ORCAMENTO,
+  SEU_PLANO,
+  SEU_PROBLEMA,
+  SEU_SETUP,
+  SUA_DUVIDA,
+  SUA_NECESSIDADE,
+  SUA_VISAO,
+} from './Models'
+import { Container, Content, Title } from './styles'
 
 export function Cards() {
   const [FirstCard, setFirstCard] = useState(<></>)

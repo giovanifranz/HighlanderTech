@@ -1,18 +1,12 @@
-import 'react-toastify/dist/ReactToastify.css'
-import { Field, Formik } from 'formik'
 import { SetStateAction } from 'react'
+import { toast, ToastContainer } from 'react-toastify'
 import axios from 'axios'
+import { Field, Formik } from 'formik'
 
-import {
-  Title,
-  Formulario as FormularioComponent,
-  Label,
-  Input,
-  TextareaSection,
-  Button
-} from './styles'
-import { ToastContainer, toast } from 'react-toastify'
 import { useSelect } from '../../../hooks/useSelect'
+
+import { Button, Formulario as FormularioComponent, Input, Label, TextareaSection, Title } from './styles'
+import 'react-toastify/dist/ReactToastify.css'
 
 export function Formulario() {
   const { select, setSelect } = useSelect()
@@ -37,7 +31,7 @@ export function Formulario() {
           nome: '',
           email: '',
           telefone: '',
-          mensagem: ''
+          mensagem: '',
         }}
         onSubmit={async (values) => {
           const data = { ...values, service: select }
@@ -47,7 +41,7 @@ export function Formulario() {
             method: 'post',
             url: '/api/send-email',
             headers: { 'Content-Type': 'application/json' },
-            data: JSON.stringify({ data })
+            data: JSON.stringify({ data }),
           })
             .then(() => {
               toast.success('Email enviado com Sucesso!', {
@@ -57,7 +51,7 @@ export function Formulario() {
                 closeOnClick: true,
                 pauseOnHover: false,
                 draggable: true,
-                progress: undefined
+                progress: undefined,
               })
             })
             .catch(() => {
@@ -68,7 +62,7 @@ export function Formulario() {
                 closeOnClick: true,
                 pauseOnHover: false,
                 draggable: true,
-                progress: undefined
+                progress: undefined,
               })
             })
         }}
@@ -84,12 +78,8 @@ export function Formulario() {
               as="select"
               id="service"
               name="service"
-              onChange={(event: {
-                target: { value: SetStateAction<string> }
-              }) =>
-                setSelect(
-                  event.target.value as 'sites' | 'maintenance' | 'mounting'
-                )
+              onChange={(event: { target: { value: SetStateAction<string> } }) =>
+                setSelect(event.target.value as 'sites' | 'maintenance' | 'mounting')
               }
             >
               <option value="sites">Sites</option>

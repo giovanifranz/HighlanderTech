@@ -1,5 +1,5 @@
+import { Field, Form } from 'formik'
 import styled from 'styled-components'
-import { Form, Field } from 'formik'
 
 export const Formulario = styled(Form)`
   position: relative;

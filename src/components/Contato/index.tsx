@@ -1,7 +1,9 @@
-import { Container } from './styles'
-import { Formulario } from './Formulario'
-import { Cards } from './Cards'
 import { SelectProvider } from '../../hooks/useSelect'
+
+import { Cards } from './Cards'
+import { Formulario } from './Formulario'
+import { Container } from './styles'
+
 export function Contato() {
   return (
     <SelectProvider>

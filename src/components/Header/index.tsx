@@ -1,18 +1,14 @@
 import Image from 'next/image'
+
 import Link from './Link'
-import { Header as HeaderStyled, Nav, Container } from './styles'
+import { Container, Header as HeaderStyled, Nav } from './styles'
 
 export function Header() {
   return (
     <HeaderStyled>
       <Container>
         <Link href="/">
-          <Image
-            src="/LogoHighlanderTech.png"
-            alt="Highlander Tech"
-            height={28}
-            width={193}
-          />
+          <Image src="/LogoHighlanderTech.png" alt="Highlander Tech" height={28} width={193} />
         </Link>
 
         <Nav>

@@ -15,7 +15,7 @@ export async function sendEmail(data: data) {
       to: 'giovanifranz151@gmail.com',
       from: 'comercial@highlandertech.com.br',
       subject: `Nome: ${data.nome} / Serviço: ${data.service}`,
-      html: `Telefone: ${data.telefone} <br> E-mail: ${data.email} <br> Mensagem: ${data.mensagem}`
+      html: `Telefone: ${data.telefone} <br> E-mail: ${data.email} <br> Mensagem: ${data.mensagem}`,
     }
     await sgMail.send(msg).then(
       () => {
@@ -26,7 +26,7 @@ export async function sendEmail(data: data) {
         if (error.response) {
           console.error(error.response.body)
         }
-      }
+      },
     )
   }
 }

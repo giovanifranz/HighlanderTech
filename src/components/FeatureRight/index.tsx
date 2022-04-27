@@ -1,7 +1,9 @@
-import Image from 'next/image'
-import { Container, Article, Text, Button } from './styles'
 import { BsArrowRight } from 'react-icons/bs'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
+
+import { Article, Button, Container, Text } from './styles'
+
 interface FeatureRightProps {
   title: string
   subTitle: string
@@ -9,12 +11,7 @@ interface FeatureRightProps {
   description: string
 }
 
-export function FeatureRight({
-  title,
-  subTitle,
-  image,
-  description
-}: FeatureRightProps) {
+export function FeatureRight({ title, subTitle, image, description }: FeatureRightProps) {
   const router = useRouter()
   return (
     <Container>

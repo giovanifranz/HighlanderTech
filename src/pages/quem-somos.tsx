@@ -1,4 +1,4 @@
-import { Fazemos, Equipe } from '../components'
+import { Equipe, Fazemos } from '../components'
 
 export default function Quem() {
   return (

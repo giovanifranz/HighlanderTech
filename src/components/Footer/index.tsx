@@ -1,7 +1,8 @@
+import { RiFacebookFill, RiInstagramFill, RiWhatsappFill } from 'react-icons/ri'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Footer as FooterStyled, Container, Nav, Text } from './styles'
-import { RiWhatsappFill, RiInstagramFill, RiFacebookFill } from 'react-icons/ri'
+
+import { Container, Footer as FooterStyled, Nav, Text } from './styles'
 
 export function Footer() {
   return (
@@ -10,12 +11,7 @@ export function Footer() {
         <Nav>
           <Link href="/">
             <a>
-              <Image
-                src="/LogoHighlanderTech.png"
-                alt="Highlander Tech"
-                height={28}
-                width={193}
-              />
+              <Image src="/LogoHighlanderTech.png" alt="Highlander Tech" height={28} width={193} />
             </a>
           </Link>
           <Link href="https://api.whatsapp.com/send?phone=555199188952">

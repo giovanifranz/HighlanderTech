@@ -1,9 +1,10 @@
-import CardsContato from './CardsContato'
-import { MdOutlineReportProblem } from 'react-icons/md'
+import { BsEyeFill, BsQuestionLg } from 'react-icons/bs'
 import { FaRegMoneyBillAlt } from 'react-icons/fa'
 import { GiConsoleController } from 'react-icons/gi'
-import { RiFileEditLine, RiComputerLine } from 'react-icons/ri'
-import { BsEyeFill, BsQuestionLg } from 'react-icons/bs'
+import { MdOutlineReportProblem } from 'react-icons/md'
+import { RiComputerLine, RiFileEditLine } from 'react-icons/ri'
+
+import CardsContato from './CardsContato'
 
 export const SUA_DUVIDA = (
   <CardsContato

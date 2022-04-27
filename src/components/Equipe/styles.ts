@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import NextImage from 'next/image'
+import styled from 'styled-components'
 
 export const Container = styled.section`
   width: 1268px;
