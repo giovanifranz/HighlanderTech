@@ -15,10 +15,12 @@ const initialState: SelectContextType = {
   setSelect: () => {},
 }
 
-export const SelectContext = createContext<SelectContextType>(initialState)
-export const useSelect = () => useContext(SelectContext)
+const SelectContext = createContext<SelectContextType>(initialState)
+const useSelect = () => useContext(SelectContext)
 
-export function SelectProvider({ children }: SelectProviderProps) {
+function SelectProvider({ children }: SelectProviderProps) {
   const [select, setSelect] = useState<'sites' | 'maintenance' | 'mounting'>('sites')
   return <SelectContext.Provider value={{ select, setSelect }}>{children}</SelectContext.Provider>
 }
+
+export { SelectContext, useSelect, SelectProvider }

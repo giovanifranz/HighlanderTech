@@ -14,7 +14,8 @@ export const SUA_DUVIDA = (
     description="Não tenha medo de perguntar! Pode nos mandar todas as suas dúvidas, faremos o possível para sanar todas elas!"
   />
 )
-export const SEU_PLANO = (
+
+const SEU_PLANO = (
   <CardsContato
     title="SEU PLANO"
     purple={true}
@@ -23,7 +24,7 @@ export const SEU_PLANO = (
   />
 )
 
-export const SUA_VISAO = (
+const SUA_VISAO = (
   <CardsContato
     title="SUA VISÃO"
     icon={BsEyeFill}
@@ -31,7 +32,7 @@ export const SUA_VISAO = (
   />
 )
 
-export const SEU_PROBLEMA = (
+const SEU_PROBLEMA = (
   <CardsContato
     purple={true}
     title="SEU PROBLEMA"
@@ -39,14 +40,16 @@ export const SEU_PROBLEMA = (
     description="Informe o mais detalhadamente possível o problema que você está enfrentando, assim saberemos o que procurar!"
   />
 )
-export const SEU_SETUP = (
+
+const SEU_SETUP = (
   <CardsContato
     title="SEU SETUP"
     description="Informa o mais detalhadamente qual a configuração do seu PC, assim podemos filtrar o número de problemas possíveis"
     icon={RiComputerLine}
   />
 )
-export const SEU_ORCAMENTO = (
+
+const SEU_ORCAMENTO = (
   <CardsContato
     title="SEU ORÇAMENTO"
     purple={true}
@@ -55,10 +58,16 @@ export const SEU_ORCAMENTO = (
   />
 )
 
-export const SUA_NECESSIDADE = (
+const SUA_NECESSIDADE = (
   <CardsContato
     title="SUA NECESSIDADE"
     icon={GiConsoleController}
     description="Nos diga qual vai ser o objetivo de uso do PC eacessórios irá precisar, assim saberemos o que indicar para você!"
   />
 )
+
+export const modelsMapper = {
+  sites: [SEU_PLANO, SUA_VISAO],
+  maintenance: [SEU_PROBLEMA, SEU_SETUP],
+  mounting: [SEU_ORCAMENTO, SUA_NECESSIDADE],
+}

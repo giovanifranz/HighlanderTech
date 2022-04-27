@@ -2,41 +2,18 @@ import { useEffect, useState } from 'react'
 
 import { useSelect } from '../../../hooks/useSelect'
 
-import {
-  SEU_ORCAMENTO,
-  SEU_PLANO,
-  SEU_PROBLEMA,
-  SEU_SETUP,
-  SUA_DUVIDA,
-  SUA_NECESSIDADE,
-  SUA_VISAO,
-} from './Models'
+import { modelsMapper, SUA_DUVIDA } from './Models'
 import { Container, Content, Title } from './styles'
 
 export function Cards() {
-  const [FirstCard, setFirstCard] = useState(<></>)
-  const [SecondCard, setSecondCard] = useState(<></>)
+  const [FirstCard, setFirstCard] = useState(modelsMapper['sites'][0])
+  const [SecondCard, setSecondCard] = useState(modelsMapper['sites'][1])
 
   const { select } = useSelect()
 
   useEffect(() => {
-    switch (select) {
-      case 'sites':
-        setFirstCard(SEU_PLANO)
-        setSecondCard(SUA_VISAO)
-        break
-      case 'maintenance':
-        setFirstCard(SEU_PROBLEMA)
-        setSecondCard(SEU_SETUP)
-        break
-      case 'mounting':
-        setFirstCard(SEU_ORCAMENTO)
-        setSecondCard(SUA_NECESSIDADE)
-        break
-      default:
-        setFirstCard(SEU_PLANO)
-        setSecondCard(SUA_VISAO)
-    }
+    setFirstCard(modelsMapper[select][0])
+    setSecondCard(modelsMapper[select][1])
   }, [select])
 
   return (
