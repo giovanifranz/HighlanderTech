@@ -30,8 +30,13 @@ body {
   background-color: var(--cyan-light);
   color: var(--black);
   margin: 0;
+  padding-top: 72px;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 0px;
+  }
 }
 `
 export const Container = styled.main`

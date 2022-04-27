@@ -8,9 +8,12 @@ export const Header = styled.header`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   background-color: var(--white);
+  position: fixed;
+  z-index: 999999;
 
   @media screen and (max-width: 768px) {
     height: 144px;
+    position: relative;
   }
 `
 
