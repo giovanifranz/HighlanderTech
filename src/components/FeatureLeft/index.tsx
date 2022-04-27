@@ -1,11 +1,10 @@
 import { BsArrowRight } from 'react-icons/bs'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import Link from 'next/link'
 
-import { Article, Button, Container, Text } from './styles'
+import { Anchor, Article, Container, Text } from './styles'
 
 export function FeatureLeft() {
-  const router = useRouter()
   return (
     <Container>
       <Image src="/home/feature_2.png" alt="Montagem de computadores" height={540} width={540} />
@@ -17,9 +16,11 @@ export function FeatureLeft() {
           gabinete ou o setup completo, montamos o seu computador de acordo com a SUA necessidade, com nossa
           consultoria completa.
         </Text>
-        <Button onClick={() => router.push('/contato')}>
-          <p>Solicte seu orçamento</p> <BsArrowRight size={22} />
-        </Button>
+        <Link href="/contato" passHref>
+          <Anchor>
+            <p>Solicte seu orçamento</p> <BsArrowRight size={22} />
+          </Anchor>
+        </Link>
       </Article>
     </Container>
   )

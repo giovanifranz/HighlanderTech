@@ -50,7 +50,7 @@ export const Text = styled.p`
   font-size: 1.125rem;
 `
 
-export const Button = styled.button`
+export const Anchor = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;

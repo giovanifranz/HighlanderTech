@@ -1,8 +1,8 @@
 import { BsArrowRight } from 'react-icons/bs'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import Link from 'next/link'
 
-import { Article, Button, Container, Text } from './styles'
+import { Anchor, Article, Container, Text } from './styles'
 
 interface FeatureRightProps {
   title: string
@@ -12,16 +12,17 @@ interface FeatureRightProps {
 }
 
 export function FeatureRight({ title, subTitle, image, description }: FeatureRightProps) {
-  const router = useRouter()
   return (
     <Container>
       <Article>
         <h1>{title}</h1>
         <h2>{subTitle}</h2>
         <Text>{description}</Text>
-        <Button onClick={() => router.push('/contato')}>
-          <p>Solicte seu orçamento</p> <BsArrowRight size={22} />
-        </Button>
+        <Link href="/contato" passHref>
+          <Anchor>
+            <p>Solicte seu orçamento</p> <BsArrowRight size={22} />
+          </Anchor>
+        </Link>
       </Article>
       <Image src={image} alt={title} height={540} width={540} />
     </Container>

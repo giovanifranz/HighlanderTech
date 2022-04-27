@@ -1,5 +1,10 @@
 {
-  "name": "highlander",
+  "name": "highlander-tech",
+  "author": "Giovani Franz",
+  "description": "Site oficial Highlander Tech",
+  "engines": {
+    "node": "18.0.0"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
