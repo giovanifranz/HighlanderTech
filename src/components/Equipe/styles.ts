@@ -1,4 +1,3 @@
-import NextImage from 'next/image'
 import styled from 'styled-components'
 
 export const Container = styled.section`
@@ -17,20 +16,5 @@ export const Container = styled.section`
   @media screen and (max-width: 1024px) {
     width: 100%;
     padding: 20px;
-  }
-`
-
-export const Image = styled(NextImage)`
-  visibility: visible;
-  @media screen and (max-width: 768px) {
-    visibility: hidden;
-    width: 100%;
-  }
-`
-export const ImageSM = styled(NextImage)`
-  visibility: hidden;
-  @media screen and (max-width: 768px) {
-    visibility: visible;
-    width: 100%;
   }
 `

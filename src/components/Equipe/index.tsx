@@ -1,4 +1,9 @@
-import { Container, Image, ImageSM } from './styles'
+import dynamic from 'next/dynamic'
+
+import { Container } from './styles'
+
+const Image = dynamic(() => import('./Image'))
+const ImageSM = dynamic(() => import('./ImageSM'))
 
 export function Equipe() {
   return (
