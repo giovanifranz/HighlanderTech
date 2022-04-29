@@ -3,7 +3,7 @@
   "author": "Giovani Franz",
   "description": "Site oficial Highlander Tech",
   "engines": {
-    "node": "14.15.8"
+    "node": "14.x"
   },
   "private": true,
   "scripts": {
