@@ -1,5 +1,13 @@
-import { Contato as ContatoContainer } from '../components'
+import { Cards, Container, Formulario } from '../components/Contato'
+import { SelectProvider } from '../hooks/useSelect'
 
 export default function Contato() {
-  return <ContatoContainer />
+  return (
+    <SelectProvider>
+      <Container>
+        <Formulario />
+        <Cards />
+      </Container>
+    </SelectProvider>
+  )
 }

@@ -1,7 +1,12 @@
-import { Field, Form } from 'formik'
+import { ToastContainer as Toast } from 'react-toastify'
+import { Field, Form as Formik } from 'formik'
 import styled from 'styled-components'
 
-export const Formulario = styled(Form)`
+export const ToastContainer = styled(Toast)`
+  z-index: 99999;
+`
+
+export const Form = styled(Formik)`
   position: relative;
   width: 425px;
   height: 450px;

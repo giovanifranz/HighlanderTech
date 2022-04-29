@@ -9,7 +9,7 @@ export const Header = styled.header`
   display: flex;
   background-color: var(--white);
   position: fixed;
-  z-index: 999999;
+  z-index: 55555;
 
   @media screen and (max-width: 768px) {
     height: 144px;

@@ -1,11 +1,11 @@
 import { SetStateAction } from 'react'
-import { toast, ToastContainer } from 'react-toastify'
+import { toast } from 'react-toastify'
 import axios from 'axios'
 import { Field, Formik } from 'formik'
 
 import { useSelect } from '../../../hooks/useSelect'
 
-import { Button, Formulario as FormularioComponent, Input, Label, TextareaSection, Title } from './styles'
+import { Button, Form, Input, Label, TextareaSection, Title, ToastContainer } from './styles'
 import 'react-toastify/dist/ReactToastify.css'
 
 export function Formulario() {
@@ -67,7 +67,7 @@ export function Formulario() {
             })
         }}
       >
-        <FormularioComponent>
+        <Form>
           <div>
             <Label htmlFor="nome">Nome</Label>
             <Input type="text" id="nome" name="nome" required />
@@ -102,7 +102,7 @@ export function Formulario() {
               Enviar
             </Button>
           </TextareaSection>
-        </FormularioComponent>
+        </Form>
       </Formik>
     </section>
   )
