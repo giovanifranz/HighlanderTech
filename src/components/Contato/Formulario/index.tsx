@@ -52,8 +52,8 @@ export function Formulario() {
                 progress: undefined,
               })
             })
-            .catch(() => {
-              toast.error('Tente novamente em alguns minutos!', {
+            .catch((error: Error) => {
+              toast.error(error.message, {
                 position: 'top-right',
                 autoClose: 1500,
                 hideProgressBar: false,

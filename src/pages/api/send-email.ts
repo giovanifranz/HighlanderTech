@@ -5,8 +5,15 @@ import { sendEmail } from '../../services/sendEmail'
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     const { data } = req.body
-    await sendEmail(data)
-    return res.status(200).end()
+    const { error } = await sendEmail(data)
+
+    if (!error) {
+      return res.status(200).end()
+    }
+
+    return res.status(500).json({
+      error: { message: error },
+    })
   }
   return res.status(404).json({
     error: {
