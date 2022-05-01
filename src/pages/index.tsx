@@ -7,9 +7,10 @@ export default function Home() {
         title="Criação de Websites"
         subTitle="Capture seus clientes"
         description="Precisando de uma página para o seu negócio? Uma página com a sua
-  identidade, integrado com seu e-mail comercial ajuda a alavancar
-  suas conversões, além de ser muito mais profissional."
+        identidade, integrado com seu e-mail comercial ajuda a alavancar
+        suas conversões, além de ser muito mais profissional."
         image="/home/feature_1.png"
+        type="sites"
       />
       <FeatureLeft />
       <FeatureRight
@@ -20,6 +21,7 @@ export default function Home() {
         assistência para computadores, sejam eles para escritório ou para
         jogos."
         image="/home/feature_3.png"
+        type="maintenance"
       />
     </>
   )

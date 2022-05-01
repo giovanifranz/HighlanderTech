@@ -7,8 +7,8 @@ interface LinkProps {
 
 export default function Link({ href, children }: LinkProps) {
   return (
-    <NextLink href={href}>
-      <a>{children}</a>
+    <NextLink href={href} passHref>
+      {children}
     </NextLink>
   )
 }

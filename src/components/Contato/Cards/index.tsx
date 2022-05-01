@@ -6,8 +6,8 @@ import { modelsMapper, SUA_DUVIDA } from './Models'
 import { Container, Content, Title } from './styles'
 
 export function Cards() {
-  const [FirstCard, setFirstCard] = useState(modelsMapper['sites'][0])
-  const [SecondCard, setSecondCard] = useState(modelsMapper['sites'][1])
+  const [FirstCard, setFirstCard] = useState(modelsMapper.sites[0])
+  const [SecondCard, setSecondCard] = useState(modelsMapper.sites[1])
 
   const { select } = useSelect()
 

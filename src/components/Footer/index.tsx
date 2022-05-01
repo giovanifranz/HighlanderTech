@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { RiFacebookFill, RiInstagramFill, RiWhatsappFill } from 'react-icons/ri'
 import Image from 'next/image'
 import Link from 'next/link'

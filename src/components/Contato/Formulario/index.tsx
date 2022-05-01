@@ -35,8 +35,6 @@ export function Formulario() {
         }}
         onSubmit={async (values) => {
           const data = { ...values, service: select }
-          console.log(data)
-
           await axios({
             method: 'post',
             url: '/api/send-email',
@@ -78,8 +76,9 @@ export function Formulario() {
               as="select"
               id="service"
               name="service"
-              onChange={(event: { target: { value: SetStateAction<string> } }) =>
-                setSelect(event.target.value as 'sites' | 'maintenance' | 'mounting')
+              value={select}
+              onChange={(event: { target: { value: SetStateAction<Select> } }) =>
+                setSelect(event.target.value as Select)
               }
             >
               <option value="sites">Sites</option>

@@ -9,18 +9,19 @@ interface FeatureRightProps {
   subTitle: string
   image: string
   description: string
+  type: Select
 }
 
-export function FeatureRight({ title, subTitle, image, description }: FeatureRightProps) {
+export function FeatureRight({ title, subTitle, image, description, type }: FeatureRightProps) {
   return (
     <Container>
       <Article>
         <h1>{title}</h1>
         <h2>{subTitle}</h2>
         <Text>{description}</Text>
-        <Link href="/contato" passHref>
+        <Link href={`/contato?select=${type}`} passHref>
           <Anchor>
-            <p>Solicte seu orçamento</p> <BsArrowRight size={22} />
+            <p>Solicite seu orçamento</p> <BsArrowRight size={22} />
           </Anchor>
         </Link>
       </Article>

@@ -4,8 +4,7 @@ import Router from 'next/router'
 import NProgress from 'nprogress'
 
 import { Footer, Header } from '../components'
-import { GlobalStyle } from '../styles'
-import { Container } from '../styles'
+import { Container, GlobalStyle } from '../styles'
 
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/500.css'
@@ -25,7 +24,6 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>HighlanderTech</title>
-        <link rel="logo" href="/LogoHighlanderTech.png" />
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <GlobalStyle />

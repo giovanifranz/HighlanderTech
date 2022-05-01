@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { IconType } from 'react-icons'
 import { ThemeProvider } from 'styled-components'
 
@@ -10,7 +11,7 @@ interface CardsContatoProps {
   purple?: boolean
 }
 
-export default function CardsContato({ icon, title, description, purple }: CardsContatoProps) {
+function Cards({ icon, title, description, purple }: CardsContatoProps) {
   const theme = {
     bg: purple ? '#E6D9FA' : 'transparent',
     bgBorder: purple ? 'var(--purple-light)' : '#A9EAEE',
@@ -27,3 +28,7 @@ export default function CardsContato({ icon, title, description, purple }: Cards
     </ThemeProvider>
   )
 }
+
+const CardsContato = memo(Cards, (prevProps, nextProps) => Object.is(prevProps, nextProps))
+
+export default CardsContato

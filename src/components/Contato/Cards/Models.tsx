@@ -9,7 +9,7 @@ import CardsContato from './CardsContato'
 export const SUA_DUVIDA = (
   <CardsContato
     title="SUAS DÚVIDAS"
-    purple={true}
+    purple
     icon={BsQuestionLg}
     description="Não tenha medo de perguntar! Pode nos mandar todas as suas dúvidas, faremos o possível para sanar todas elas!"
   />
@@ -18,7 +18,7 @@ export const SUA_DUVIDA = (
 const SEU_PLANO = (
   <CardsContato
     title="SEU PLANO"
-    purple={true}
+    purple
     icon={RiFileEditLine}
     description="Informe qual plano você têm interesse, para sabermos como melhor podemos lhe atender!"
   />
@@ -34,7 +34,7 @@ const SUA_VISAO = (
 
 const SEU_PROBLEMA = (
   <CardsContato
-    purple={true}
+    purple
     title="SEU PROBLEMA"
     icon={MdOutlineReportProblem}
     description="Informe o mais detalhadamente possível o problema que você está enfrentando, assim saberemos o que procurar!"
@@ -52,7 +52,7 @@ const SEU_SETUP = (
 const SEU_ORCAMENTO = (
   <CardsContato
     title="SEU ORÇAMENTO"
-    purple={true}
+    purple
     description="Informe um valor máximo para a montagem do seu computador, assim saberemos até onde podemos ir!"
     icon={FaRegMoneyBillAlt}
   />

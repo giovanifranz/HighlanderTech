@@ -1,8 +1,18 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react'
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
+import { useRouter } from 'next/router'
 
 interface SelectContextType {
-  select: 'sites' | 'maintenance' | 'mounting'
-  setSelect: Dispatch<SetStateAction<'sites' | 'maintenance' | 'mounting'>>
+  select: Select
+  setSelect: Dispatch<SetStateAction<Select>>
 }
 
 interface SelectProviderProps {
@@ -11,16 +21,25 @@ interface SelectProviderProps {
 
 const initialState: SelectContextType = {
   select: 'sites',
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setSelect: () => {},
+  setSelect: () => null,
 }
 
 const SelectContext = createContext<SelectContextType>(initialState)
 const useSelect = () => useContext(SelectContext)
 
 function SelectProvider({ children }: SelectProviderProps) {
-  const [select, setSelect] = useState<'sites' | 'maintenance' | 'mounting'>('sites')
-  return <SelectContext.Provider value={{ select, setSelect }}>{children}</SelectContext.Provider>
+  const [select, setSelect] = useState<Select>('sites')
+  const { query } = useRouter()
+
+  useEffect(() => {
+    if (typeof query.select === 'string' && ['sites', 'maintenance', 'mounting'].includes(query.select)) {
+      setSelect(query.select as Select)
+    }
+  }, [query])
+
+  const value = useMemo(() => ({ select, setSelect }), [select, setSelect])
+
+  return <SelectContext.Provider value={value}>{children}</SelectContext.Provider>
 }
 
-export { SelectContext, useSelect, SelectProvider }
+export { SelectContext, SelectProvider, useSelect }

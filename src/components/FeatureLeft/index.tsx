@@ -16,9 +16,9 @@ export function FeatureLeft() {
           gabinete ou o setup completo, montamos o seu computador de acordo com a SUA necessidade, com nossa
           consultoria completa.
         </Text>
-        <Link href="/contato" passHref>
+        <Link href="/contato?select=mounting" passHref>
           <Anchor>
-            <p>Solicte seu orçamento</p> <BsArrowRight size={22} />
+            <p>Solicite seu orçamento</p> <BsArrowRight size={22} />
           </Anchor>
         </Link>
       </Article>
