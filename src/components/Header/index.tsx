@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Image from 'next/image'
 
 import Link from './Link'
@@ -8,9 +9,10 @@ export function Header() {
     <HeaderStyled>
       <Container>
         <Link href="/">
-          <Image src="/LogoHighlanderTech.png" alt="Highlander Tech" height={28} width={193} />
+          <a>
+            <Image src="/LogoHighlanderTech.png" alt="Highlander Tech" height={28} width={193} />
+          </a>
         </Link>
-
         <Nav>
           <Link href="/">Home</Link>
           <Link href="/quem-somos">Quem Somos</Link>
