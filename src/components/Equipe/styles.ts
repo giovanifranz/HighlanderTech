@@ -16,9 +16,16 @@ export const Container = styled.section`
   @media screen and (max-width: 1024px) {
     width: 100%;
     padding: 20px;
+
+    h3 {
+      display: none;
+    }
   }
 `
 
 export const Content = styled.div`
   position: relative;
+  margin: 0 auto;
+  max-width: 1268px;
+  height: 200px;
 `
