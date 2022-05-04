@@ -1,8 +1,8 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { RiFacebookFill, RiInstagramFill, RiWhatsappFill } from 'react-icons/ri'
-import Image from 'next/image'
-import Link from 'next/link'
 
+import { Logo } from 'components/Logo'
+
+import { Link } from './Link'
 import { Container, Footer as FooterStyled, Nav, Text } from './styles'
 
 export function Footer() {
@@ -10,11 +10,7 @@ export function Footer() {
     <FooterStyled>
       <Container>
         <Nav>
-          <Link href="/">
-            <a>
-              <Image src="/LogoHighlanderTech.png" alt="Highlander Tech" height={28} width={193} />
-            </a>
-          </Link>
+          <Logo />
           <Link href="https://api.whatsapp.com/send?phone=555199188952">
             <a>
               <RiWhatsappFill className="Icon" />

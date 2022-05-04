@@ -1,16 +1,21 @@
-import dynamic from 'next/dynamic'
+import { useWindowsSize } from 'hooks/useWindowsSize'
+import Image from 'next/image'
 
-import { Container } from './styles'
-
-const Image = dynamic(() => import('./Image'))
-const ImageSM = dynamic(() => import('./ImageSM'))
+import { Container, Content } from './styles'
 
 export function Equipe() {
+  const width = useWindowsSize()
+
   return (
     <Container>
       <h3>Equipe</h3>
-      <Image src="/quem-somos/equipe.png" alt="Equipe" width={1140} height={200} />
-      <ImageSM src="/quem-somos/equipe-sm.png" alt="Equipe" width={667} height={204} />
+      <Content>
+        <Image
+          src={width < 768 ? '/quem-somos/equipe-sm.png' : '/quem-somos/equipe.png'}
+          alt="Equipe"
+          layout="fill"
+        />
+      </Content>
     </Container>
   )
 }

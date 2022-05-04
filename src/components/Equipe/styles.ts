@@ -18,3 +18,7 @@ export const Container = styled.section`
     padding: 20px;
   }
 `
+
+export const Content = styled.div`
+  position: relative;
+`
