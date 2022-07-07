@@ -1,1 +1,1 @@
-type Select = 'sites' | 'maintenance' | 'mounting'
+type Select = 'sites' | 'maintenance' | 'mounting';

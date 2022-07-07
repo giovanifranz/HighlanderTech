@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Footer = styled.footer`
   background-color: var(--white);
@@ -9,7 +9,7 @@ export const Footer = styled.footer`
   bottom: 0;
   display: flex;
   align-items: center;
-`
+`;
 export const Container = styled.div`
   width: 1268px;
   margin: 0 auto;
@@ -24,7 +24,7 @@ export const Container = styled.div`
   @media screen and (max-width: 768px) {
     width: 375px;
   }
-`
+`;
 
 export const Nav = styled.nav`
   display: flex;
@@ -40,7 +40,7 @@ export const Nav = styled.nav`
   .Icon:hover {
     opacity: 0.8;
   }
-`
+`;
 
 export const Text = styled.p`
   font-size: 0.625rem;
@@ -49,4 +49,4 @@ export const Text = styled.p`
   @media screen and (max-width: 768px) {
     display: none;
   }
-`
+`;

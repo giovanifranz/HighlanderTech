@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-import { useSelect } from '../../../hooks/useSelect'
+import { modelsMapper, SUA_DUVIDA } from '../../../../data/cardModel';
+import { useSelect } from '../../../hooks/useSelect';
 
-import { modelsMapper, SUA_DUVIDA } from './Models'
-import { Container, Content, Title } from './styles'
+import { Container, Content, Title } from './styles';
 
 export function Cards() {
-  const [FirstCard, setFirstCard] = useState(modelsMapper.sites[0])
-  const [SecondCard, setSecondCard] = useState(modelsMapper.sites[1])
+  const [FirstCard, setFirstCard] = useState(modelsMapper.sites[0]);
+  const [SecondCard, setSecondCard] = useState(modelsMapper.sites[1]);
 
-  const { select } = useSelect()
+  const { select } = useSelect();
 
   useEffect(() => {
-    setFirstCard(modelsMapper[select][0])
-    setSecondCard(modelsMapper[select][1])
-  }, [select])
+    setFirstCard(modelsMapper[select][0]);
+    setSecondCard(modelsMapper[select][1]);
+  }, [select]);
 
   return (
     <Container>
@@ -25,5 +25,5 @@ export function Cards() {
         {SUA_DUVIDA}
       </Content>
     </Container>
-  )
+  );
 }

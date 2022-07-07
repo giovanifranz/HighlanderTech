@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Header = styled.header`
   top: 0;
@@ -15,7 +15,7 @@ export const Header = styled.header`
     height: 144px;
     position: relative;
   }
-`
+`;
 
 export const Nav = styled.nav`
   display: flex;
@@ -37,7 +37,7 @@ export const Nav = styled.nav`
   @media screen and (max-width: 768px) {
     margin-top: 20px;
   }
-`
+`;
 
 export const Container = styled.div`
   width: 1268px;
@@ -55,4 +55,4 @@ export const Container = styled.div`
     justify-content: center;
     width: 375px;
   }
-`
+`;

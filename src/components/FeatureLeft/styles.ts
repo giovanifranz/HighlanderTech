@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.section`
   width: 980px;
@@ -12,7 +12,7 @@ export const Container = styled.section`
     width: 375px;
     margin-bottom: 90px;
   }
-`
+`;
 export const Article = styled.article`
   width: 560px;
   padding: 40px;
@@ -43,12 +43,12 @@ export const Article = styled.article`
     margin-top: 20px;
     margin-bottom: 60px;
   }
-`
+`;
 
 export const Text = styled.p`
   margin-top: 30px;
   font-size: 1.125rem;
-`
+`;
 
 export const Anchor = styled.a`
   display: flex;
@@ -82,4 +82,4 @@ export const Anchor = styled.a`
     padding-left: 0;
     padding-right: 0;
   }
-`
+`;

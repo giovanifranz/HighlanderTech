@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.section`
   width: 1268px;
@@ -21,11 +21,11 @@ export const Container = styled.section`
       display: none;
     }
   }
-`
+`;
 
 export const Content = styled.div`
   position: relative;
   margin: 0 auto;
   max-width: 1268px;
   height: 200px;
-`
+`;

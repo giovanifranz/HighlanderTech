@@ -1,15 +1,57 @@
-import { SetStateAction } from 'react'
-import { toast } from 'react-toastify'
-import axios from 'axios'
-import { Field, Formik } from 'formik'
+import { SetStateAction, useCallback } from 'react';
+import { toast } from 'react-toastify';
+import axios from 'axios';
+import { Field, Formik } from 'formik';
 
-import { useSelect } from '../../../hooks/useSelect'
+import { useSelect } from '../../../hooks/useSelect';
 
-import { Button, Form, Input, Label, TextareaSection, Title, ToastContainer } from './styles'
-import 'react-toastify/dist/ReactToastify.css'
+import {
+  Button,
+  Form,
+  Input,
+  Label,
+  TextareaSection,
+  Title,
+  ToastContainer,
+} from './styles';
+import 'react-toastify/dist/ReactToastify.css';
+
+type FormValues = { nome: string; email: string; telefone: string; mensagem: string };
 
 export function Formulario() {
-  const { select, setSelect } = useSelect()
+  const { select, setSelect } = useSelect();
+
+  const sendForm = useCallback(async (values: FormValues) => {
+    const data = { ...values, service: select };
+    await axios({
+      method: 'post',
+      url: '/api/send-email',
+      headers: { 'Content-Type': 'application/json' },
+      data: JSON.stringify({ data }),
+    })
+      .then(() => {
+        toast.success('Email enviado com Sucesso!', {
+          position: 'top-right',
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+        });
+      })
+      .catch((error: Error) => {
+        toast.error(error.message, {
+          position: 'top-right',
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+        });
+      });
+  }, []);
 
   return (
     <section>
@@ -27,43 +69,15 @@ export function Formulario() {
       <Title>Solicite seu orçamento!</Title>
       <ToastContainer />
       <Formik
-        initialValues={{
-          nome: '',
-          email: '',
-          telefone: '',
-          mensagem: '',
-        }}
-        onSubmit={async (values) => {
-          const data = { ...values, service: select }
-          await axios({
-            method: 'post',
-            url: '/api/send-email',
-            headers: { 'Content-Type': 'application/json' },
-            data: JSON.stringify({ data }),
-          })
-            .then(() => {
-              toast.success('Email enviado com Sucesso!', {
-                position: 'top-right',
-                autoClose: 1500,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: true,
-                progress: undefined,
-              })
-            })
-            .catch((error: Error) => {
-              toast.error(error.message, {
-                position: 'top-right',
-                autoClose: 1500,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: true,
-                progress: undefined,
-              })
-            })
-        }}
+        initialValues={
+          {
+            nome: '',
+            email: '',
+            telefone: '',
+            mensagem: '',
+          } as FormValues
+        }
+        onSubmit={sendForm}
       >
         <Form>
           <div>
@@ -104,5 +118,5 @@ export function Formulario() {
         </Form>
       </Formik>
     </section>
-  )
+  );
 }

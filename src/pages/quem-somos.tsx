@@ -1,4 +1,4 @@
-import { Equipe, Fazemos } from '../components'
+import { Equipe, Fazemos } from '../components';
 
 export default function Quem() {
   return (
@@ -6,5 +6,5 @@ export default function Quem() {
       <Fazemos />
       <Equipe />
     </>
-  )
+  );
 }

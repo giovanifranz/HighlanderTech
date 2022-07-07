@@ -1,7 +1,7 @@
-import { Logo } from 'components/Logo'
+import { Logo } from 'components/Logo';
 
-import Link from './Link'
-import { Container, Header as HeaderStyled, Nav } from './styles'
+import Link from './Link';
+import { Container, Header as HeaderStyled, Nav } from './styles';
 
 export function Header() {
   return (
@@ -15,5 +15,5 @@ export function Header() {
         </Nav>
       </Container>
     </HeaderStyled>
-  )
+  );
 }

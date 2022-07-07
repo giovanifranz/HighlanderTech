@@ -1,3 +1,3 @@
-export * from './Cards'
-export * from './Formulario'
-export * from './styles'
+export * from './Cards';
+export * from './Formulario';
+export * from './styles';

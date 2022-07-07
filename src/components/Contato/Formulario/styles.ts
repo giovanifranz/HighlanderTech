@@ -1,10 +1,10 @@
-import { ToastContainer as Toast } from 'react-toastify'
-import { Field, Form as Formik } from 'formik'
-import styled from 'styled-components'
+import { ToastContainer as Toast } from 'react-toastify';
+import { Field, Form as Formik } from 'formik';
+import styled from 'styled-components';
 
 export const ToastContainer = styled(Toast)`
   z-index: 99999;
-`
+`;
 
 export const Form = styled(Formik)`
   position: relative;
@@ -38,14 +38,14 @@ export const Form = styled(Formik)`
   @media screen and (max-width: 768px) {
     width: 335px;
   }
-`
+`;
 
 export const Label = styled.label`
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.25rem;
   margin-bottom: 5px;
-`
+`;
 
 export const TextareaSection = styled.section`
   display: flex;
@@ -61,7 +61,7 @@ export const TextareaSection = styled.section`
     padding: 10px;
     font-size: 0.875rem;
   }
-`
+`;
 
 export const Button = styled.button`
   position: absolute;
@@ -84,7 +84,7 @@ export const Button = styled.button`
     opacity: 0.8;
     cursor: pointer;
   }
-`
+`;
 
 export const Title = styled.h1`
   font-size: 2.5rem;
@@ -95,10 +95,10 @@ export const Title = styled.h1`
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
-`
+`;
 export const Input = styled(Field)`
   border-radius: 5px;
   border: 0.5px solid var(--black);
   padding: 10px;
   font-size: 0.875rem;
-`
+`;

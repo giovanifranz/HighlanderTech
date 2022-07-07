@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.section`
   width: 1268px;
@@ -15,4 +15,4 @@ export const Container = styled.section`
     flex-direction: column;
     align-items: center;
   }
-`
+`;

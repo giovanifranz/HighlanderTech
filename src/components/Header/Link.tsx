@@ -1,8 +1,8 @@
-import NextLink from 'next/link'
+import NextLink from 'next/link';
 
 interface LinkProps {
-  href: string
-  children: React.ReactNode
+  href: string;
+  children: React.ReactNode;
 }
 
 export default function Link({ href, children }: LinkProps) {
@@ -10,5 +10,5 @@ export default function Link({ href, children }: LinkProps) {
     <NextLink href={href} passHref>
       {children}
     </NextLink>
-  )
+  );
 }

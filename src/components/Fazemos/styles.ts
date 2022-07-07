@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const About = styled.section`
   width: 1268px;
@@ -15,7 +15,7 @@ export const About = styled.section`
     width: 320px;
     flex-direction: column;
   }
-`
+`;
 
 export const Article = styled.article`
   width: 700px;
@@ -39,10 +39,10 @@ export const Article = styled.article`
     width: 300px;
     text-align: center;
   }
-`
+`;
 
 export const Text = styled.p`
   font-size: 1.25rem;
   line-height: 2rem;
   font-weight: 400;
-`
+`;

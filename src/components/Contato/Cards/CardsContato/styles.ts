@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Card = styled.div`
   width: 205px;
@@ -21,7 +21,7 @@ export const Card = styled.div`
     position: absolute;
     top: 20px;
   }
-`
+`;
 
 export const Title = styled.h4`
   font-size: 1.25rem;
@@ -29,7 +29,7 @@ export const Title = styled.h4`
   font-weight: bold;
   position: absolute;
   top: 75px;
-`
+`;
 
 export const Text = styled.p`
   width: 180px;
@@ -38,4 +38,4 @@ export const Text = styled.p`
   line-height: 1.5rem;
   position: absolute;
   top: 115px;
-`
+`;

@@ -1,5 +1,5 @@
-import { Cards, Container, Formulario } from '../components/Contato'
-import { SelectProvider } from '../hooks/useSelect'
+import { Cards, Container, Formulario } from '../components/Contato';
+import { SelectProvider } from '../hooks/useSelect';
 
 export default function Contato() {
   return (
@@ -9,5 +9,5 @@ export default function Contato() {
         <Cards />
       </Container>
     </SelectProvider>
-  )
+  );
 }

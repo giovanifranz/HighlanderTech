@@ -1,4 +1,4 @@
-import { FeatureLeft, FeatureRight } from '../components'
+import { FeatureLeft, FeatureRight } from '../components';
 
 export default function Home() {
   return (
@@ -24,5 +24,5 @@ export default function Home() {
         type="maintenance"
       />
     </>
-  )
+  );
 }

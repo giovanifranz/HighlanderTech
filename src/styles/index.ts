@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 :root {
@@ -38,10 +38,10 @@ body {
     padding-top: 0px;
   }
 }
-`
+`;
 export const Container = styled.main`
   height: 100%;
   width: 100%;
   margin-top: 72px;
   padding-bottom: 72px;
-`
+`;
