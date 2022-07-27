@@ -38,14 +38,12 @@ function Feature({
   return (
     <main className={`${styles.wrapper} ${!isRight && styles.reverse}`}>
       <article
-        className={
-          isFirst
-            ? styles.article
-            : `${styles.article} ${styles['others-articles']}`
-        }
+        className={`${styles.article} ${
+          !isFirst && styles['others-articles']
+        } ${isRight ? 'md:text-right' : 'md:text-left'}`}
       >
-        <Title text={title} />
-        <Subtitle text={subTitle} />
+        <Title text={title} isRight={isRight} />
+        <Subtitle text={subTitle} isRight={isRight} />
         <p className={styles.text}>{description}</p>
         <button
           type="button"
