@@ -1,10 +1,3 @@
-import { Equipe, Fazemos } from '../components';
+import { QuemSomos } from 'components/templates';
 
-export default function Quem() {
-  return (
-    <>
-      <Fazemos />
-      <Equipe />
-    </>
-  );
-}
+export default QuemSomos;

@@ -1,0 +1,11 @@
+.about {
+  @apply w-11/12 md:max-w-6xl mx-0 flex justify-center items-center flex-col md:flex-row gap-5;
+}
+
+.article {
+  @apply mx-0 flex flex-col text-center md:text-left flex-1;
+}
+
+.text {
+  @apply text-lg my-8;
+}

@@ -15,9 +15,9 @@ interface SelectContextType {
   setSelect: Dispatch<SetStateAction<Select>>;
 }
 
-interface SelectProviderProps {
+type SelectProviderProps = {
   children: ReactNode;
-}
+};
 
 const initialState: SelectContextType = {
   select: 'sites',
@@ -42,7 +42,9 @@ function SelectProvider({ children }: SelectProviderProps) {
 
   const value = useMemo(() => ({ select, setSelect }), [select, setSelect]);
 
-  return <SelectContext.Provider value={value}>{children}</SelectContext.Provider>;
+  return (
+    <SelectContext.Provider value={value}>{children}</SelectContext.Provider>
+  );
 }
 
 export { SelectContext, SelectProvider, useSelect };

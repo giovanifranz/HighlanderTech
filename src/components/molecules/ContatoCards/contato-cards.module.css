@@ -1,0 +1,11 @@
+.wrapper {
+  @apply w-52 h-72 rounded-xl gap-5 flex justify-center items-center text-center border-4 border-solid flex-col transition-all;
+}
+
+.title {
+  @apply text-lg font-bold;
+}
+
+.text {
+  @apply text-xs font-semibold w-10/12;
+}

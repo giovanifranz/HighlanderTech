@@ -1,0 +1,10 @@
+.container {
+  @apply flex flex-col md:flex-row w-11/12 md:max-w-7xl mx-0 gap-48  items-center md:items-start justify-center;
+}
+
+.wrapper {
+  @apply flex-1;
+}
+.cards {
+  @apply flex gap-2 mt-16 flex-wrap justify-center items-center;
+}

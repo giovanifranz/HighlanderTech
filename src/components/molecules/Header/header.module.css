@@ -1,0 +1,11 @@
+.header {
+  @apply top-0 left-0 right-0 h-20 shadow-md flex bg-white fixed z-50;
+}
+
+.navbar {
+  @apply flex justify-between w-80 text-lg font-medium text-black;
+}
+
+.wrapper {
+  @apply w-4/5 max-w-7xl flex items-center justify-between mx-auto;
+}

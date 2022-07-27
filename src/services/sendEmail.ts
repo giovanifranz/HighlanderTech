@@ -1,6 +1,6 @@
 import sgMail from '@sendgrid/mail';
 
-type data = {
+type Data = {
   service: string;
   email: string;
   telefone: string;
@@ -8,7 +8,7 @@ type data = {
   mensagem: string;
 };
 
-export async function sendEmail(data: data) {
+export async function sendEmail(data: Data) {
   sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY as string);
   const msg = {
     to: 'giovanifranz151@gmail.com',

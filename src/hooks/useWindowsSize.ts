@@ -10,5 +10,6 @@ export function useWindowsSize() {
     updateSize();
     return () => window.removeEventListener('resize', updateSize);
   }, []);
+
   return width;
 }

@@ -1,0 +1,20 @@
+.wrapper {
+  @apply w-60 h-64 bg-cyan-400 rounded-2xl flex flex-col items-center justify-center;
+}
+
+.title {
+  @apply text-lg font-bold text-purple-500;
+}
+
+.list {
+  @apply h-20 flex flex-wrap gap-4 mx-0 justify-center mt-8;
+
+  li::before {
+    content: '•';
+    @apply text-purple-500 mr-1;
+  }
+}
+
+.icon {
+  @apply text-purple-500;
+}

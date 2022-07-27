@@ -18,7 +18,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   return res.status(404).json({
     error: {
       code: 'not_found',
-      message: "The requested endpoint was not found or doesn't support this method.",
+      message:
+        "The requested endpoint was not found or doesn't support this method.",
     },
   });
 };
