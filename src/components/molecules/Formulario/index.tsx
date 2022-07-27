@@ -21,7 +21,7 @@ export function Formulario() {
   const sendEmail = useEmail();
 
   return (
-    <main className={styles.container}>
+    <section className={styles.container}>
       <ToastContainer
         className={styles['toast-alert']}
         position="top-right"
@@ -85,6 +85,6 @@ export function Formulario() {
           </button>
         </Form>
       </Formik>
-    </main>
+    </section>
   );
 }
