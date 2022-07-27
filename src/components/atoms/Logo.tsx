@@ -1,15 +1,13 @@
-import { useWindowsSize } from 'hooks/useWindowsSize';
 import Link from 'next/link';
 
 function Logo() {
-  const width = useWindowsSize();
   return (
     <Link href="/" passHref>
       <a href="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width={width > 620 ? '195' : '175'}
-          height={width > 620 ? '30' : '26'}
+          width="195"
+          height="30"
           fill="none"
           viewBox="0 0 2082 315"
         >

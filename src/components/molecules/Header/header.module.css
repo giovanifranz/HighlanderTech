@@ -1,9 +1,5 @@
 .header {
-  @apply top-0 left-0 right-0 h-20 shadow-md flex bg-white fixed z-50;
-}
-
-.navbar {
-  @apply flex justify-between w-80 text-lg font-medium text-black;
+  @apply top-0 left-0 right-0 h-20 shadow-md flex bg-white fixed z-50 justify-between items-center;
 }
 
 .wrapper {

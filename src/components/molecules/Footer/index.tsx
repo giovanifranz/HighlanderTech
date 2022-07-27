@@ -3,15 +3,12 @@ import {
   RiInstagramFill,
   RiWhatsappFill,
 } from 'react-icons/ri';
-import { useWindowsSize } from 'hooks/useWindowsSize';
 
 import { Link, Logo } from '../../atoms';
 
 import styles from './footer.module.css';
 
 function Footer() {
-  const width = useWindowsSize();
-
   return (
     <footer className={styles.footer}>
       <div className={styles.wrapper}>
@@ -33,13 +30,11 @@ function Footer() {
             <RiFacebookFill className={styles.icon} />
           </Link>
         </nav>
-        {width > 620 && (
-          <p className={styles.text}>
-            HIGHLANDER COMERCIO VAREJISTA E DESENVOLVIMENTO DE SOFTWARES LTDA
-            <br />
-            CNPJ 42.295.929/0001-35
-          </p>
-        )}
+        <p className={styles.text}>
+          HIGHLANDER COMERCIO VAREJISTA E DESENVOLVIMENTO DE SOFTWARES LTDA
+          <br />
+          CNPJ 42.295.929/0001-35
+        </p>
       </div>
     </footer>
   );

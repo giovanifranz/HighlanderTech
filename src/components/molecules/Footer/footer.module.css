@@ -1,9 +1,9 @@
 .footer {
-  @apply bg-white shadow-black shadow-md h-20 left-0 right-0 bottom-0 fixed flex items-center justify-center flex-col;
+  @apply bg-white shadow-black shadow-md py-2 px-2 md:px-0 left-0 right-0 bottom-0 fixed flex items-center justify-center flex-col;
 }
 
 .wrapper {
-  @apply w-4/5 max-w-7xl flex items-center justify-between  mx-0;
+  @apply w-4/5 max-w-7xl flex flex-col md:flex-row items-center justify-between  mx-0;
 }
 
 .navbar {
@@ -15,5 +15,5 @@
 }
 
 .text {
-  @apply text-xs text-right;
+  @apply text-xs text-center mt-2 md:text-right flex-1;
 }

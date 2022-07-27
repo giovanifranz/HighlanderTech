@@ -27,7 +27,13 @@ function Feature({
 }: Props) {
   return (
     <main className={`${styles.wrapper} ${!isRight && styles.reverse}`}>
-      <article className={styles.article}>
+      <article
+        className={
+          isFirst
+            ? styles.article
+            : `${styles.article} ${styles['others-articles']}`
+        }
+      >
         <Title text={title} />
         <Subtitle text={subTitle} />
         <p className={styles.text}>{description}</p>

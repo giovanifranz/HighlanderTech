@@ -35,7 +35,3 @@
     @apply w-full h-full p-1;
   }
 }
-
-.send-button {
-  @apply absolute bottom-0 right-0 h-10 text-lg font-bold text-white bg-purple-200 rounded w-36 transition-all hover:opacity-80;
-}

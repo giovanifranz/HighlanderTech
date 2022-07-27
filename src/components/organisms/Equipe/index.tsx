@@ -5,12 +5,6 @@ import styles from './equipe.module.css';
 export function Equipe() {
   return (
     <section className={styles.equipe}>
-      <span className={styles.ball} />
-      <span className={styles.ball} />
-      <span className={styles.ball} />
-      <span className={styles.ball} />
-      <span className={styles.ball} />
-      <span className={styles.ball} />
       <div className={styles.wrapper}>
         <ExpertsCard
           name="Iago Paz"
@@ -30,12 +24,6 @@ export function Equipe() {
           href="https://www.linkedin.com/in/giovanifranz"
         />
       </div>
-      <span className={styles.ball} />
-      <span className={styles.ball} />
-      <span className={styles.ball} />
-      <span className={styles.ball} />
-      <span className={styles.ball} />
-      <span className={styles.ball} />
     </section>
   );
 }

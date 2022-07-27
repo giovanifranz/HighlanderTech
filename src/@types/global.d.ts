@@ -6,3 +6,5 @@ type FormValues = {
   telefone: string;
   mensagem: string;
 };
+
+type EmptyObject = Record<string, never>;

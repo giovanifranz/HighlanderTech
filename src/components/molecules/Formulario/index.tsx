@@ -76,7 +76,7 @@ export function Formulario() {
             <Field as="textarea" id="mensagem" name="mensagem" required />
           </section>
           <button
-            className={styles['send-button']}
+            className="absolute bottom-0 right-0 h-10 text-lg font-bold text-white bg-purple-200 rounded w-36 transition-all hover:opacity-80"
             id="enviar"
             name="enviar"
             type="submit"

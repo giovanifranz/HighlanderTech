@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable import/no-extraneous-dependencies */
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -16,7 +20,7 @@ module.exports = {
         400: '#D5FAFC',
         200: '#F3FEFF',
       },
-      gray: '#F9FEFF',
+      gray: colors.gray, // '#F9FEFF',
       black: '#18191F',
       transparent: 'transparent',
       green: '#00BFA5',
