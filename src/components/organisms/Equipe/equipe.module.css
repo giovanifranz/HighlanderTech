@@ -9,3 +9,10 @@
 .ball {
   @apply w-10 h-10 mx-10 rounded-full bg-cyan-400;
 }
+
+.wrapper::before,
+.wrapper::after {
+  content: '';
+
+  @apply w-10 h-10 mx-10 rounded-full bg-cyan-400 hidden md:block;
+}
