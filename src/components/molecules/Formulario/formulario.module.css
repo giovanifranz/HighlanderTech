@@ -3,7 +3,7 @@
 }
 
 .container {
-  @apply relative flex flex-col w-11/12 mx-0  max-w-[425px] h-[520px];
+  @apply relative flex flex-col w-11/12 mx-0 max-w-[425px] h-[520px];
 }
 
 .form {
@@ -29,7 +29,7 @@
 }
 
 .send {
-  @apply h-60 w-full;
+  @apply h-48 lg:h-60 w-full;
 
   textarea {
     @apply w-full h-full p-1;
