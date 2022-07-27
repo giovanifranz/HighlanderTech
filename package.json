@@ -12,7 +12,7 @@
     "analyzer": "ANALYZE=true next build",
     "start": "next start",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings=0 --fix",
-    "format": "prettier --write \"{src,data}/**/*.{ts,tsx}\"",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "clean": "rimraf .next",
     "prepare": "husky install"
   },
