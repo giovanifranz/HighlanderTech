@@ -1,0 +1,7 @@
+.header {
+  @apply top-0 left-0 right-0 h-20 shadow-md flex items-center justify-center bg-white fixed z-50;
+}
+
+.wrapper {
+  @apply w-11/12 md:w-4/5 max-w-7xl flex items-center justify-between mx-auto;
+}

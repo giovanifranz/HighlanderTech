@@ -1,0 +1,11 @@
+.equipe {
+  @apply flex items-center mt-10;
+}
+
+.wrapper {
+  @apply flex items-center gap-5 md:gap-0 flex-col md:flex-row;
+}
+
+.ball {
+  @apply w-10 h-10 mx-10 rounded-full bg-cyan-400;
+}

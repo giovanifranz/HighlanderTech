@@ -1,0 +1,19 @@
+.footer {
+  @apply bg-white shadow-black shadow-md py-2 px-2 md:px-0 left-0 right-0 bottom-0 md:fixed flex items-center justify-center flex-col;
+}
+
+.wrapper {
+  @apply w-4/5 max-w-7xl flex flex-col md:flex-row items-center justify-between  mx-0;
+}
+
+.navbar {
+  @apply flex items-center justify-between w-80;
+}
+
+.icon {
+  @apply text-purple-500 ml-3 md:ml-0 text-2xl hover:opacity-70;
+}
+
+.text {
+  @apply text-xs text-center mt-2 md:text-right flex-1;
+}
