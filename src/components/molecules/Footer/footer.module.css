@@ -11,7 +11,7 @@
 }
 
 .icon {
-  @apply text-purple-500 text-2xl hover:opacity-70;
+  @apply text-purple-500 ml-3 md:ml-0 text-2xl hover:opacity-70;
 }
 
 .text {
