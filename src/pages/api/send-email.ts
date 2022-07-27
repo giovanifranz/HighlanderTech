@@ -1,10 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { sendEmail } from '../../services/sendEmail';
+import { sendEmail } from '../../utils/sendEmail';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
-    const { data } = req.body;
+    const data: EmailData = req.body;
+
     const { error } = await sendEmail(data);
 
     if (!error) {
@@ -15,6 +16,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       error: { message: error },
     });
   }
+
   return res.status(404).json({
     error: {
       code: 'not_found',

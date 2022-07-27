@@ -1,42 +1,34 @@
 import { useCallback } from 'react';
+import type { ToastOptions } from 'react-toastify';
 import { toast } from 'react-toastify';
-import axios from 'axios';
 
 import { useSelect } from './useSelect';
+
+const TOAST_CONFIG: ToastOptions = {
+  position: 'top-right',
+  autoClose: 1500,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: false,
+  draggable: true,
+  progress: undefined,
+};
 
 export function useEmail() {
   const { select } = useSelect();
   return useCallback(
     async (values: FormValues) => {
       const data = { ...values, service: select };
-      await axios({
-        method: 'post',
-        url: '/api/send-email',
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        data: JSON.stringify({ data }),
-      })
-        .then(() => {
-          toast.success('Email enviado com Sucesso!', {
-            position: 'top-right',
-            autoClose: 1500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-          });
-        })
-        .catch((error: Error) => {
-          toast.error(error.message, {
-            position: 'top-right',
-            autoClose: 1500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-          });
-        });
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        toast.success('Email enviado com Sucesso!', TOAST_CONFIG);
+      } else {
+        toast.error('Erro ao enviar e-mail!', TOAST_CONFIG);
+      }
     },
     [select],
   );

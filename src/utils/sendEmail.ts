@@ -1,14 +1,6 @@
 import sgMail from '@sendgrid/mail';
 
-type Data = {
-  service: string;
-  email: string;
-  telefone: string;
-  nome: string;
-  mensagem: string;
-};
-
-export async function sendEmail(data: Data) {
+export async function sendEmail(data: EmailData) {
   sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY as string);
   const msg = {
     to: 'giovanifranz151@gmail.com',

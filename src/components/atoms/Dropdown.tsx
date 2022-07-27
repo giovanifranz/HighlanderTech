@@ -31,7 +31,7 @@ function Dropdown() {
           {({ open }) => (
             <>
               <span className="rounded-md shadow-sm">
-                <Menu.Button className="transition duration-150 ease-in-out focus:outline-none">
+                <Menu.Button className="transition duration-150 ease-in-out focus:outline-none hover:opacity-80">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="40"

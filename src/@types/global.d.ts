@@ -7,4 +7,8 @@ type FormValues = {
   mensagem: string;
 };
 
+type EmailData = FormValues & {
+  service: string;
+};
+
 type EmptyObject = Record<string, never>;
