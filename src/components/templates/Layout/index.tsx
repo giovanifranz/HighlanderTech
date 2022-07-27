@@ -15,6 +15,10 @@ function Layout({ children }: Props) {
       <Head>
         <title>HighlanderTech</title>
         <link rel="manifest" href="/manifest.json" />
+        <meta
+          property="og:image"
+          content="https://www.highlandertech.com.br/social.jpg"
+        />
       </Head>
       <Header />
       <main className={styles.wrapper}>{children}</main>
