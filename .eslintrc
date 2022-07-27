@@ -94,6 +94,8 @@
     "@next/next/no-html-link-for-pages": "off",
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
-    "no-undef": "off"
+    "no-undef": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }
