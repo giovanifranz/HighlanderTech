@@ -4,11 +4,9 @@ import {
   ReactNode,
   SetStateAction,
   useContext,
-  useEffect,
   useMemo,
   useState,
 } from 'react';
-import { useRouter } from 'next/router';
 
 interface SelectContextType {
   select: Select;
@@ -29,16 +27,6 @@ const useSelect = () => useContext(SelectContext);
 
 function SelectProvider({ children }: SelectProviderProps) {
   const [select, setSelect] = useState<Select>('sites');
-  const { query } = useRouter();
-
-  useEffect(() => {
-    if (
-      typeof query.select === 'string' &&
-      ['sites', 'maintenance', 'mounting'].includes(query.select)
-    ) {
-      setSelect(query.select as Select);
-    }
-  }, [query]);
 
   const value = useMemo(() => ({ select, setSelect }), [select, setSelect]);
 

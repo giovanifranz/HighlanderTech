@@ -1,3 +1,4 @@
+import { SelectProvider } from 'hooks/useSelect';
 import type { AppProps } from 'next/app';
 import Router from 'next/router';
 import NProgress from 'nprogress';
@@ -21,9 +22,11 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <SelectProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SelectProvider>
   );
 }
 

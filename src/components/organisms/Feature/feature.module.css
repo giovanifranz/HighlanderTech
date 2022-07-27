@@ -9,7 +9,7 @@
 .article {
   @apply w-11/12 md:w-[560px] md:p-10 relative md:-mt-20 text-center md:text-left;
 
-  a {
+  button {
     @apply text-lg text-purple-500 font-semibold md:absolute flex items-center justify-center mb-8 md:mb-0 mt-8 hover:opacity-70 transition-all hover:cursor-pointer;
   }
 }

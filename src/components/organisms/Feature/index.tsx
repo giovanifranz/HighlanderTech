@@ -1,6 +1,8 @@
+import { useCallback } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
+import { useSelect } from 'hooks/useSelect';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { Subtitle, Title } from 'components/atoms';
 
@@ -25,6 +27,14 @@ function Feature({
   isRight = false,
   isFirst = false,
 }: Props) {
+  const { setSelect } = useSelect();
+  const router = useRouter();
+
+  const handleClick = useCallback(() => {
+    setSelect(type);
+    router.push('/contato');
+  }, [type]);
+
   return (
     <main className={`${styles.wrapper} ${!isRight && styles.reverse}`}>
       <article
@@ -37,12 +47,14 @@ function Feature({
         <Title text={title} />
         <Subtitle text={subTitle} />
         <p className={styles.text}>{description}</p>
-        <Link href={`/contato?select=${type}`} passHref>
-          <a className={isRight ? styles.right : styles.left}>
-            <p>Solicite seu orçamento</p>{' '}
-            <BsArrowRight size={22} className="mx-1 mt-1" />
-          </a>
-        </Link>
+        <button
+          type="button"
+          className={isRight ? styles.right : styles.left}
+          onClick={handleClick}
+        >
+          <p>Solicite seu orçamento</p>{' '}
+          <BsArrowRight size={22} className="mx-1 mt-1" />
+        </button>
       </article>
       <Image
         priority={isFirst}
