@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 import NextLink from 'next/link';
 
 type Props = PropsWithChildren<{

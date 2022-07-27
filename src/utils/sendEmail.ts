@@ -1,7 +1,7 @@
-import sgMail from '@sendgrid/mail';
+import sendgridMail from '@sendgrid/mail';
 
 export async function sendEmail(data: EmailData) {
-  sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY as string);
+  sendgridMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY as string);
 
   const { nome, service, telefone, email, mensagem } = data;
   const msg = {
@@ -11,7 +11,7 @@ export async function sendEmail(data: EmailData) {
     html: `Telefone: ${telefone} <br> E-mail: ${email} <br> Mensagem: ${mensagem}`,
   };
 
-  return sgMail.send(msg).then(
+  return sendgridMail.send(msg).then(
     () => ({ error: null }),
     (error: Error) => ({
       error: error.message,

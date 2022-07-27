@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { IconType } from 'react-icons';
+import type { IconType } from 'react-icons';
 
 import styles from './contato-cards.module.css';
 
