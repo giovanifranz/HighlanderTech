@@ -1,0 +1,19 @@
+.container {
+  @apply relative inline-block text-left;
+}
+
+.bg-button {
+  @apply rounded-md shadow-sm bg-cyan-200;
+}
+
+.button {
+  @apply transition duration-150 ease-in-out focus:outline-none hover:opacity-80;
+}
+
+.panel {
+  @apply absolute right-0 w-32 mt-2 bg-white border border-gray-200 shadow-lg outline-none origin-top-right divide-y divide-gray-100 rounded-md;
+}
+
+.wrapper {
+  @apply flex flex-col justify-between;
+}

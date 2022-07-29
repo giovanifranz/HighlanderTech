@@ -1,36 +1,17 @@
-import { Menu, Transition } from '@headlessui/react';
+import { Disclosure, Transition } from '@headlessui/react';
 
-import { Link } from './Link';
+import { MenuItem } from '../../atoms';
 
-type Props = {
-  href: string;
-  label: string;
-};
-
-function MenuItem({ href, label }: Props) {
-  return (
-    <Menu.Item>
-      {({ active }) => (
-        <div
-          className={`${
-            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-          } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
-        >
-          <Link href={href}>{label}</Link>
-        </div>
-      )}
-    </Menu.Item>
-  );
-}
+import styles from './dropdown.module.css';
 
 function Dropdown() {
   return (
-    <div className="relative inline-block text-left">
-      <Menu>
+    <div className={styles.container}>
+      <Disclosure>
         {({ open }) => (
           <>
-            <span className="rounded-md shadow-sm">
-              <Menu.Button className="transition duration-150 ease-in-out focus:outline-none hover:opacity-80">
+            <span className={styles['bg-button']}>
+              <Disclosure.Button className={styles.button}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -63,7 +44,7 @@ function Dropdown() {
                     rx="2.5"
                   />
                 </svg>
-              </Menu.Button>
+              </Disclosure.Button>
             </span>
             <Transition
               show={open}
@@ -74,27 +55,17 @@ function Dropdown() {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items
-                static
-                className="absolute right-0 w-56 mt-2 bg-white border border-gray-200 shadow-lg outline-none origin-top-right divide-y divide-gray-100 rounded-md"
-              >
-                <div className="py-1">
+              <Disclosure.Panel static className={styles.panel}>
+                <div className={styles.wrapper}>
                   <MenuItem href="/" label="Home" />
                   <MenuItem href="/quem-somos" label="Quem Somos" />
-                  <Menu.Item
-                    as="span"
-                    disabled
-                    className="flex justify-between w-full px-4 py-2 text-sm text-left text-gray-700 opacity-50 cursor-not-allowed leading-5"
-                  >
-                    Portfólio (Em construção)
-                  </Menu.Item>
                   <MenuItem href="/contato" label="Contato" />
                 </div>
-              </Menu.Items>
+              </Disclosure.Panel>
             </Transition>
           </>
         )}
-      </Menu>
+      </Disclosure>
     </div>
   );
 }

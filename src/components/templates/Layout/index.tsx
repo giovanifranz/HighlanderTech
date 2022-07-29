@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 import Head from 'next/head';
 
-import { Footer, Header } from 'components/molecules';
+import { Footer } from 'components/molecules';
+import { Header } from 'components/organisms';
 
 import styles from './layout.module.css';
 

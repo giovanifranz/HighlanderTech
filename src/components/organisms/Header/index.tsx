@@ -6,7 +6,7 @@ import { Logo } from 'components/atoms';
 import styles from './header.module.css';
 
 const Dropdown = dynamic<EmptyObject>(() =>
-  import('../../atoms/Dropdown').then((mod) => mod.Dropdown),
+  import('../../molecules/Dropdown').then((mod) => mod.Dropdown),
 );
 
 const Navigation = dynamic<EmptyObject>(() =>

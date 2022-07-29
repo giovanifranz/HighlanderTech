@@ -15,5 +15,5 @@
 }
 
 .text {
-  @apply text-xs text-center mt-2 md:text-right flex-1;
+  @apply text-xs text-center mt-4 md:text-right flex-1;
 }
