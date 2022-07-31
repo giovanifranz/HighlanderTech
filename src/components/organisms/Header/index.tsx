@@ -6,11 +6,15 @@ import { Logo } from 'components/atoms';
 import styles from './header.module.css';
 
 const Dropdown = dynamic<EmptyObject>(() =>
-  import('../../molecules/Dropdown').then((mod) => mod.Dropdown),
+  import(/* webpackChunkName: "Dropdown" */ '../../molecules/Dropdown').then(
+    (mod) => mod.Dropdown,
+  ),
 );
 
 const Navigation = dynamic<EmptyObject>(() =>
-  import('../../atoms/Navigation').then((mod) => mod.Navigation),
+  import(/* webpackChunkName: "Navigation" */ '../../atoms/Navigation').then(
+    (mod) => mod.Navigation,
+  ),
 );
 
 function Header() {

@@ -10,7 +10,7 @@ function Dropdown() {
       <Disclosure>
         {({ open }) => (
           <>
-            <span className={styles['bg-button']}>
+            <span>
               <Disclosure.Button className={styles.button}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

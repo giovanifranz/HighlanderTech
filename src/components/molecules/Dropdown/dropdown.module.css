@@ -2,10 +2,6 @@
   @apply relative inline-block text-left;
 }
 
-.bg-button {
-  @apply rounded-md shadow-sm bg-cyan-200;
-}
-
 .button {
   @apply transition duration-150 ease-in-out focus:outline-none hover:opacity-80;
 }
