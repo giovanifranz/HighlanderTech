@@ -1,20 +1,20 @@
-import { useWindowsSize } from "hooks/useWindowsSize";
-import dynamic from "next/dynamic";
+import { useWindowsSize } from 'hooks/useWindowsSize';
+import dynamic from 'next/dynamic';
 
-import { Logo } from "components/atoms";
+import { Logo } from 'components/atoms';
 
-import styles from "./header.module.css";
+import styles from './header.module.css';
 
 const Dropdown = dynamic<EmptyObject>(() =>
-  import(/* webpackChunkName: "Dropdown" */ "../../molecules/Dropdown").then(
-    (mod) => mod.Dropdown
-  )
+  import(/* webpackChunkName: "Dropdown" */ '../../molecules/Dropdown').then(
+    (mod) => mod.Dropdown,
+  ),
 );
 
 const Navigation = dynamic<EmptyObject>(() =>
-  import(/* webpackChunkName: "Navigation" */ "../../atoms/Navigation").then(
-    (mod) => mod.Navigation
-  )
+  import(/* webpackChunkName: "Navigation" */ '../../atoms/Navigation').then(
+    (mod) => mod.Navigation,
+  ),
 );
 
 function Header() {

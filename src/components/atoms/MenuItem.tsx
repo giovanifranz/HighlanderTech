@@ -12,7 +12,7 @@ function MenuItem({ href, label }: Props) {
 
   const handleClick = useCallback(() => {
     router.push(href);
-  }, [href]);
+  }, [href, router]);
 
   return (
     <Disclosure.Button

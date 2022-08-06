@@ -33,7 +33,7 @@ function Feature({
   const handleClick = useCallback(() => {
     setSelect(type);
     router.push('/contato');
-  }, [type]);
+  }, [router, setSelect, type]);
 
   return (
     <main className={`${styles.wrapper} ${!isRight && styles.reverse}`}>
