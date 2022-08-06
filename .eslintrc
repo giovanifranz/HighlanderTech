@@ -2,9 +2,10 @@
   "extends": [
     "plugin:@next/next/recommended",
     "plugin:tailwind/recommended",
-    "@highlandertech/eslint-config"
+    "@highlandertech/eslint-config/eslint"
   ],
   "rules": {
-    "@next/next/no-html-link-for-pages": "off"
+    "@next/next/no-html-link-for-pages": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }
