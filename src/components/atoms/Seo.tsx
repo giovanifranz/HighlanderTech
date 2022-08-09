@@ -12,16 +12,16 @@ function Seo() {
     <NextSeo
       title={title}
       languageAlternates={[{ hrefLang: 'pt-br', href: BASE_URL }]}
-      description="Precisando de uma página para o seu negócio? Uma página com a sua identidade, integrado com seu e-mail comercial ajuda a alavancar suas conversões, além de ser muito mais profissional."
+      description="Precisando de uma página para o seu negócio? Uma identidade visual? Talvez um setup novo? Aqui é o lugar."
       canonical={canonical}
       openGraph={{
-        url: `${BASE_URL}/og-image.jpg`,
+        url: `${BASE_URL}/social.jpg`,
         title,
         description: 'Crie o extraordinário. Seja autêntico.',
         type: 'image/jpeg',
         images: [
           {
-            url: `${BASE_URL}/og-image.jpg`,
+            url: `${BASE_URL}/social.jpg`,
             width: 815,
             height: 315,
             alt: title,
