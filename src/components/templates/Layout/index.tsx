@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import Head from 'next/head';
 
+import { Seo } from 'components/atoms';
 import { Footer } from 'components/molecules';
 import { Header } from 'components/organisms';
 
@@ -13,16 +13,9 @@ type Props = {
 function Layout({ children }: Props) {
   return (
     <>
-      <Head>
-        <title>HighlanderTech</title>
-        <link rel="manifest" href="/manifest.json" />
-        <meta
-          property="og:image"
-          content="https://www.highlandertech.com.br/social.jpg"
-        />
-      </Head>
+      <Seo />
       <Header />
-      <main className={styles.wrapper}>{children}</main>
+      <div className={styles.wrapper}>{children}</div>
       <Footer />
     </>
   );
