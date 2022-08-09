@@ -30,7 +30,7 @@ export function Formulario() {
     mensagem: '',
   };
 
-  const { register, handleSubmit, watch } = useForm<FormValues>({
+  const { register, handleSubmit, watch, reset } = useForm<FormValues>({
     defaultValues: INITIAL_STATE,
   });
 
@@ -46,11 +46,12 @@ export function Formulario() {
       });
       if (response.ok) {
         toast.success('Email enviado com Sucesso!', TOAST_CONFIG);
+        reset();
       } else {
         toast.error('Erro ao enviar e-mail!', TOAST_CONFIG);
       }
     },
-    [select],
+    [reset, select],
   );
 
   useEffect(() => {
