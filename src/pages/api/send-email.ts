@@ -4,7 +4,7 @@ import { sendEmail } from '../../utils/sendEmail';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
-    const data: EmailData = req.body;
+    const data: FormValues = req.body;
 
     const { error } = await sendEmail(data);
 
