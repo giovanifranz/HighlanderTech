@@ -70,4 +70,4 @@ export const modelsContatos = {
   sites: [SEU_PLANO, SUA_VISAO],
   maintenance: [SEU_PROBLEMA, SEU_SETUP],
   mounting: [SEU_ORCAMENTO, SUA_NECESSIDADE],
-};
+} as const;

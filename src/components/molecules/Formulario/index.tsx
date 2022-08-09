@@ -1,7 +1,7 @@
-import { SetStateAction } from 'react';
-import { ToastContainer } from 'react-toastify';
-import { Field, Form, Formik } from 'formik';
-import { useEmail } from 'hooks/useEmail';
+import { useCallback, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import type { ToastOptions } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 import { Subtitle } from 'components/atoms';
 
@@ -9,16 +9,53 @@ import { useSelect } from '../../../hooks/useSelect';
 
 import styles from './formulario.module.css';
 
-const INITIAL_STATE: FormValues = {
-  nome: '',
-  email: '',
-  telefone: '',
-  mensagem: '',
+const TOAST_CONFIG: ToastOptions = {
+  position: 'top-right',
+  autoClose: 1500,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: false,
+  draggable: true,
+  progress: undefined,
 };
 
 export function Formulario() {
   const { select, setSelect } = useSelect();
-  const sendEmail = useEmail();
+
+  const INITIAL_STATE: FormValues = {
+    service: select,
+    nome: '',
+    email: '',
+    telefone: '',
+    mensagem: '',
+  };
+
+  const { register, handleSubmit, watch } = useForm<FormValues>({
+    defaultValues: INITIAL_STATE,
+  });
+
+  const onChange = watch('service') as Select;
+
+  const sendEmail = useCallback(
+    async (values: FormValues) => {
+      const data = { ...values, service: select };
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        toast.success('Email enviado com Sucesso!', TOAST_CONFIG);
+      } else {
+        toast.error('Erro ao enviar e-mail!', TOAST_CONFIG);
+      }
+    },
+    [select],
+  );
+
+  useEffect(() => {
+    setSelect(onChange);
+  }, [onChange, setSelect]);
 
   return (
     <section className={styles.container}>
@@ -36,55 +73,55 @@ export function Formulario() {
       />
       <Subtitle text="Solicite seu orçamento!" />
       <ToastContainer className={styles['toast-alert']} />
-      <Formik initialValues={INITIAL_STATE} onSubmit={sendEmail}>
-        <Form className={styles.form}>
-          <div className={styles['wrapper-row']}>
-            <div className={styles.wrapper}>
-              <label htmlFor="nome">Nome</label>
-              <Field type="text" id="nome" name="nome" required />
-            </div>
-            <div className={styles.wrapper}>
-              <label htmlFor="service">Serviço</label>
-              <Field
-                className={styles.service}
-                as="select"
-                id="service"
-                name="service"
-                value={select}
-                onChange={(event: {
-                  target: { value: SetStateAction<Select> };
-                }) => setSelect(event.target.value as Select)}
-              >
-                <option value="sites">Sites</option>
-                <option value="maintenance">Manutenção</option>
-                <option value="mounting">Montagem</option>
-              </Field>
-            </div>
+      <form className={styles.form} onSubmit={handleSubmit(sendEmail)}>
+        <div className={styles['wrapper-row']}>
+          <div className={styles.wrapper}>
+            <label htmlFor="nome">Nome</label>
+            <input type="text" id="nome" required {...register('nome')} />
           </div>
-          <div className={styles['wrapper-row']}>
-            <div className={styles.wrapper}>
-              <label htmlFor="telefone">Telefone</label>
-              <Field type="text" id="telefone" name="telefone" />
-            </div>
-            <div className={styles.wrapper}>
-              <label htmlFor="email">E-mail</label>
-              <Field type="email" id="email" name="email" required />
-            </div>
+          <div className={styles.wrapper}>
+            <label htmlFor="service">Serviço</label>
+            <select
+              className={styles.service}
+              id="service"
+              value={select}
+              required
+              {...register('service')}
+            >
+              <option value="sites">Sites</option>
+              <option value="maintenance">Manutenção</option>
+              <option value="mounting">Montagem</option>
+            </select>
           </div>
-          <section className={styles.send}>
-            <label htmlFor="mensagem">Mensagem</label>
-            <Field as="textarea" id="mensagem" name="mensagem" required />
-          </section>
-          <button
-            className="absolute bottom-0 right-0 h-10 text-lg font-bold text-white bg-purple-200 rounded w-36 transition-all hover:opacity-80"
-            id="enviar"
-            name="enviar"
-            type="submit"
-          >
-            Enviar
-          </button>
-        </Form>
-      </Formik>
+        </div>
+        <div className={styles['wrapper-row']}>
+          <div className={styles.wrapper}>
+            <label htmlFor="telefone">Telefone</label>
+            <input
+              type="text"
+              id="telefone"
+              required
+              {...register('telefone')}
+            />
+          </div>
+          <div className={styles.wrapper}>
+            <label htmlFor="email">E-mail</label>
+            <input type="email" id="email" required {...register('email')} />
+          </div>
+        </div>
+        <section className={styles.send}>
+          <label htmlFor="mensagem">Mensagem</label>
+          <textarea id="mensagem" required {...register('mensagem')} />
+        </section>
+        <button
+          className="absolute bottom-0 right-0 h-10 text-lg font-bold text-white bg-purple-200 rounded w-36 transition-all hover:opacity-80"
+          id="enviar"
+          name="enviar"
+          type="submit"
+        >
+          Enviar
+        </button>
+      </form>
     </section>
   );
 }
