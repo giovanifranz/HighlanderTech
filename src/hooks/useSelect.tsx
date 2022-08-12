@@ -1,5 +1,6 @@
 import type { Dispatch, ReactNode, SetStateAction } from 'react';
-import { createContext, useContext, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
+import { createContext, useContextSelector } from 'use-context-selector';
 
 interface SelectContextType {
   select: Select;
@@ -16,7 +17,7 @@ const initialState: SelectContextType = {
 };
 
 const SelectContext = createContext<SelectContextType>(initialState);
-const useSelect = () => useContext(SelectContext);
+const useSelect = () => useContextSelector(SelectContext, (context) => context);
 
 function SelectProvider({ children }: SelectProviderProps) {
   const [select, setSelect] = useState<Select>('sites');

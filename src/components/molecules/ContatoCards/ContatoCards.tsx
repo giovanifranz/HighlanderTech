@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import type { IconType } from 'react-icons';
 
 import styles from './contato-cards.module.css';
@@ -10,8 +9,8 @@ type Props = {
   isPurple?: boolean;
 };
 
-const ContatoCards = memo(
-  ({ Icon, title, description, isPurple = false }: Props) => (
+function ContatoCards({ Icon, title, description, isPurple = false }: Props) {
+  return (
     <div
       className={`${
         isPurple ? 'bg-purple-100 border-purple-500' : 'border-cyan-400'
@@ -21,8 +20,8 @@ const ContatoCards = memo(
       <span className={styles.title}>{title}</span>
       <span className={styles.text}>{description}</span>
     </div>
-  ),
-);
+  );
+}
 
 export { ContatoCards };
 export type { Props as ContatoCardsProps };
