@@ -1,5 +1,5 @@
 .header {
-  @apply top-0 left-0 right-0 h-20 shadow-md flex items-center justify-center bg-white fixed z-50;
+  @apply top-0 left-0 right-0 py-4 shadow-md flex items-center justify-center bg-white fixed z-50;
 }
 
 .wrapper {

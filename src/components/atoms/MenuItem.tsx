@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { Disclosure } from '@headlessui/react';
+import { DropdownMenuItem } from '@radix-ui/react-dropdown-menu';
 import { useRouter } from 'next/router';
 
 type Props = {
@@ -15,13 +15,12 @@ function MenuItem({ href, label }: Props) {
   }, [href, router]);
 
   return (
-    <Disclosure.Button
-      as="a"
-      className="py-2 pl-4 text-sm text-left text-gray-900 leading-5 hover:bg-gray-100 hover:text-gray-700"
+    <DropdownMenuItem
+      className="text-sm text-right text-gray-900"
       onClick={() => handleClick()}
     >
-      {label}
-    </Disclosure.Button>
+      <a>{label}</a>
+    </DropdownMenuItem>
   );
 }
 

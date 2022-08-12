@@ -1,15 +1,7 @@
-.container {
-  @apply relative inline-block text-left;
-}
-
 .button {
-  @apply transition duration-150 ease-in-out focus:outline-none hover:opacity-80;
-}
-
-.panel {
-  @apply absolute right-0 w-32 mt-2 bg-white border border-gray-200 shadow-lg outline-none origin-top-right divide-y divide-gray-100 rounded-md;
+  @apply shadow-none focus:outline-0;
 }
 
 .wrapper {
-  @apply flex flex-col justify-between;
+  @apply flex flex-col w-40 pt-8 pb-4 pr-6 bg-white gap-2;
 }
