@@ -5,8 +5,9 @@ export async function sendEmail(data: FormValues) {
 
   const { nome, service, telefone, email, mensagem } = data;
   const msg = {
-    to: 'giovanifranz151@gmail.com',
+    to: 'comercial@highlandertech.com.br',
     from: 'comercial@highlandertech.com.br',
+    cc: 'giovanifranz151@gmail.com',
     subject: `Nome: ${nome} / Serviço: ${service}`,
     html: `Telefone: ${telefone} <br> E-mail: ${email} <br> Mensagem: ${mensagem}`,
   };
