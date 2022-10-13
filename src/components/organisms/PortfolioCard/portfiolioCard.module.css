@@ -1,0 +1,11 @@
+.wrapper {
+  @apply absolute bottom-0 flex flex-col items-center w-full p-2 text-center bg-black gap-2 rounded-b-3xl bg-opacity-50;
+}
+
+.anchor-wrapper {
+  @apply relative flex justify-center w-4/5 bg-center bg-cover max-w-[352px] h-52 rounded-3xl hover:opacity-75;
+}
+
+.span {
+  @apply absolute text-lg text-white right-4 bottom-2;
+}

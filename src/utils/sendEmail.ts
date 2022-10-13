@@ -1,7 +1,7 @@
 import sendgridMail from '@sendgrid/mail';
 
 export async function sendEmail(data: FormValues) {
-  sendgridMail.setApiKey(`${process.env.NEXT_PUBLIC_SENDGRID_API_KEY}`);
+  sendgridMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY || '');
 
   const { nome, service, telefone, email, mensagem } = data;
   const msg = {

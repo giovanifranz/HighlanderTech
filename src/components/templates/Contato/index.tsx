@@ -5,10 +5,10 @@ import styles from './contato.module.css';
 
 function Contato() {
   return (
-    <main className={styles.wrapper}>
+    <div className={styles.wrapper}>
       <Formulario />
       <Cards />
-    </main>
+    </div>
   );
 }
 

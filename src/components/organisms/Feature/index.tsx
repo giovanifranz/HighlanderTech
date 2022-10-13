@@ -36,7 +36,7 @@ function Feature({
   }, [router, setSelect, type]);
 
   return (
-    <main className={`${styles.wrapper} ${!isRight && styles.reverse}`}>
+    <div className={`${styles.wrapper} ${!isRight && styles.reverse}`}>
       <article
         className={`${styles.article} ${
           !isFirst && styles['others-articles']
@@ -62,7 +62,7 @@ function Feature({
         height={540}
         width={540}
       />
-    </main>
+    </div>
   );
 }
 

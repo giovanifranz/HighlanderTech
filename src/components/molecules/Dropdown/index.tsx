@@ -45,6 +45,7 @@ function Dropdown() {
         <DropdownMenu.Content className={styles.wrapper}>
           <MenuItem href="/" label="Home" />
           <MenuItem href="/quem-somos" label="Quem Somos" />
+          <MenuItem href="/portfolio" label="Portfólio" />
           <MenuItem href="/contato" label="Contato" />
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
