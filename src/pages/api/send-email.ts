@@ -35,14 +35,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
     res.status(200).end();
   }
-
-  if (req.method !== 'POST') {
-    res.status(404).json({
-      error: {
-        code: 'not_found',
-        message:
-          "The requested endpoint was not found or doesn't support this method.",
-      },
-    });
-  }
 };
