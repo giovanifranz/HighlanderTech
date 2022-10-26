@@ -19,7 +19,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       },
     });
 
-    const msg = {
+    await new Promise((resolve, reject) => {
+      transporter.verify(function (error, success) {
+        if (error) {
+          console.error(error);
+          reject(error);
+        } else {
+          console.log('Server is ready to take our messages');
+          resolve(success);
+        }
+      });
+    });
+
+    const mailData = {
       to: 'comercial@highlandertech.com.br',
       from: 'comercial@highlandertech.com.br',
       cc: 'giovanifranz151@gmail.com',
@@ -27,12 +39,18 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       html: `Telefone: ${telefone} <br> E-mail: ${email} <br> Mensagem: ${mensagem}`,
     };
 
-    transporter.sendMail(msg, (error) => {
-      if (error)
-        res.status(500).json({
-          error: { message: error },
-        });
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(mailData, (err, info) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+        } else {
+          console.log(info);
+          resolve(info);
+        }
+      });
     });
+
     res.status(200).end();
   }
 };
