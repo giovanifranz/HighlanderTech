@@ -9,6 +9,12 @@ import { useSelect } from '../../../hooks/useSelect';
 
 import styles from './formulario.module.css';
 
+const regex = new RegExp(
+  '^(([^<>()[\\]\\\\.,;:\\s@\\"]+(\\.[^<>()[\\]\\\\.,;:\\s@\\"]+)*)|' +
+    '(\\".+\\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])' +
+    '|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$',
+);
+
 const TOAST_CONFIG: ToastOptions = {
   position: 'top-right',
   autoClose: 1500,
@@ -78,7 +84,11 @@ export function Formulario() {
         <div className={styles['wrapper-row']}>
           <div className={styles.wrapper}>
             <label htmlFor="nome">Nome</label>
-            <input type="text" id="nome" required {...register('nome')} />
+            <input
+              type="text"
+              id="nome"
+              {...register('nome', { required: true })}
+            />
           </div>
           <div className={styles.wrapper}>
             <label htmlFor="service">Serviço</label>
@@ -86,8 +96,7 @@ export function Formulario() {
               className={styles.service}
               id="service"
               value={select}
-              required
-              {...register('service')}
+              {...register('service', { required: true })}
             >
               <option value="sites">Sites</option>
               <option value="maintenance">Manutenção</option>
@@ -101,18 +110,24 @@ export function Formulario() {
             <input
               type="text"
               id="telefone"
-              required
-              {...register('telefone')}
+              {...register('telefone', { required: true })}
             />
           </div>
           <div className={styles.wrapper}>
             <label htmlFor="email">E-mail</label>
-            <input type="email" id="email" required {...register('email')} />
+            <input
+              type="email"
+              id="email"
+              {...register('email', { required: true, pattern: regex })}
+            />
           </div>
         </div>
         <section className={styles.send}>
           <label htmlFor="mensagem">Mensagem</label>
-          <textarea id="mensagem" required {...register('mensagem')} />
+          <textarea
+            id="mensagem"
+            {...register('mensagem', { required: true })}
+          />
         </section>
         <button
           className="absolute bottom-0 right-0 h-10 text-lg font-bold text-white bg-purple-200 rounded w-36 transition-all hover:opacity-80"
