@@ -2,9 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
-
-body {
-  @apply bg-cyan-200 text-black m-0 pt-0 md:pt-20 overflow-x-hidden;
-
-  -webkit-font-smoothing: antialiased;
-}

@@ -7,7 +7,7 @@ import { PortfolioCard } from '../organisms';
 
 function Portfolio() {
   return (
-    <div className="flex flex-col justify-between w-11/12 mx-0 items-left md:max-w-6xl ">
+    <div className="flex flex-col justify-between w-11/12 mx-0 md:max-w-6xl">
       <Title text="Portfólio" />
       <Subtitle text="Conheça o nosso trabalho!" />
       <span className="text-center md:text-left">

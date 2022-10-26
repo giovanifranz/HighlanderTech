@@ -8,14 +8,13 @@ type Props = PropsWithChildren<{
 
 function Link({ href, target, children }: Props) {
   return (
-    <NextLink href={href} passHref>
-      <a
-        rel="noreferrer"
-        target={target}
-        className="transition-all hover:opacity-70"
-      >
-        {children}
-      </a>
+    <NextLink
+      href={href}
+      rel="noreferrer"
+      target={target}
+      className="transition-all hover:opacity-70"
+    >
+      {children}
     </NextLink>
   );
 }

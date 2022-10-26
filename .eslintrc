@@ -1,10 +1,8 @@
 {
-  "extends": [
-    "plugin:@next/next/recommended",
-    "plugin:tailwind/recommended",
-    "@highlandertech/eslint-config/eslint"
-  ],
+  "extends": ["eslint:recommended", "next", "plugin:tailwindcss/recommended"],
   "rules": {
-    "@next/next/no-html-link-for-pages": "off"
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "import/no-anonymous-default-export": "off"
   }
 }

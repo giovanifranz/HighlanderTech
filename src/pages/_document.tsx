@@ -3,7 +3,7 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="pt-BR">
+      <Html lang="pt-BR" className="scroll-smooth antialiased">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body>
+        <body className="pt-0 m-0 overflow-x-hidden text-black bg-cyan-200 md:pt-20">
           <Main />
           <NextScript />
         </body>

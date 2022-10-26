@@ -56,7 +56,6 @@ function Feature({
       </article>
       <Image
         priority={isFirst}
-        loading={isFirst ? 'eager' : 'lazy'}
         src={image}
         alt={title}
         height={540}

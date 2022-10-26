@@ -12,7 +12,7 @@ export function Equipe() {
           activity2="Layout"
           activity3="Consultoria"
           activity4="Assistência"
-          href="https://www.linkedin.com/in/iago-paz-2164a2220/"
+          href="https://www.linkedin.com/in/iago-paz-2164a2220"
         />
         <span className={styles.ball} />
         <ExpertsCard

@@ -5,13 +5,13 @@ type Props = {
 
 function Subtitle({ text, isRight = false }: Props) {
   return (
-    <h1
+    <h2
       className={`my-2 text-4xl font-extrabold text-center text-black ${
         isRight ? 'md:text-right' : 'md:text-left'
       }`}
     >
       {text}
-    </h1>
+    </h2>
   );
 }
 

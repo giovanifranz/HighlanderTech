@@ -15,7 +15,7 @@ function Home() {
         type="sites"
       />
       <Feature
-        title="Montagem de computadores"
+        title="Montagem de Computadores"
         subTitle="Um PC para VOCÊ"
         description="Precisa de um computador para a faculdade? Ou talvez para começar seu
         canal do youtube? Seja só o gabinete ou o setup completo, montamos o
@@ -26,7 +26,7 @@ function Home() {
       />
       <Feature
         isRight
-        title="manutenção e assistência"
+        title="Manutenção e Assistência"
         subTitle="Seu PC não pode parar"
         description="Seja para trabalhar, estudar ou se divertir, o computador é uma
         parte essencial das nossas vidas - por isso oferecemos manutenção e
