@@ -1,5 +1,6 @@
 import { SelectProvider } from 'hooks/useSelect';
 import type { AppProps } from 'next/app';
+import { Analytics } from '@vercel/analytics/react';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 
@@ -20,6 +21,7 @@ function App({ Component, pageProps }: AppProps) {
     <SelectProvider>
       <Layout>
         <Component {...pageProps} />
+        <Analytics />
       </Layout>
     </SelectProvider>
   );
