@@ -52,7 +52,7 @@ export function Formulario() {
           body: JSON.stringify(data),
         }),
         {
-          pending: 'E-mail sendo enviado!',
+          pending: 'E-mail já está sendo enviado!',
           success: 'E-mail enviado com Sucesso!',
           error: 'Erro ao enviar e-mail!',
         },
