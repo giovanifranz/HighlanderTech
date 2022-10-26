@@ -45,16 +45,21 @@ export function Formulario() {
   const sendEmail = useCallback(
     async (values: FormValues) => {
       const data = { ...values, service: select };
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      const response = await toast.promise(
+        fetch('/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        }),
+        {
+          pending: 'E-mail sendo enviado!',
+          success: 'E-mail enviado com Sucesso!',
+          error: 'Erro ao enviar e-mail!',
+        },
+        TOAST_CONFIG,
+      );
       if (response.ok) {
-        toast.success('Email enviado com Sucesso!', TOAST_CONFIG);
         reset();
-      } else {
-        toast.error('Erro ao enviar e-mail!', TOAST_CONFIG);
       }
     },
     [reset, select],
