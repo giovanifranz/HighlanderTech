@@ -13,6 +13,7 @@ type Props = {
   subTitle: string;
   image: string;
   description: string;
+  base64: string;
   type: Select;
   isRight?: boolean;
   isFirst?: boolean;
@@ -26,6 +27,7 @@ function Feature({
   type,
   isRight = false,
   isFirst = false,
+  base64,
 }: Props) {
   const { setSelect } = useSelect();
   const router = useRouter();
@@ -60,6 +62,8 @@ function Feature({
         alt={title}
         height={540}
         width={540}
+        blurDataURL={base64}
+        placeholder="blur"
       />
     </div>
   );

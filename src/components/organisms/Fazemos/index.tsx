@@ -4,7 +4,11 @@ import { Subtitle, Title } from 'components/atoms';
 
 import styles from './fazemos.module.css';
 
-export function Fazemos() {
+type Props = {
+  base64: string;
+};
+
+function Fazemos({ base64 }: Props) {
   return (
     <section className={styles.about}>
       <Image
@@ -14,6 +18,8 @@ export function Fazemos() {
         alt="Sobre"
         width={400}
         height={375}
+        blurDataURL={base64}
+        placeholder="blur"
       />
       <article className={styles.article}>
         <Title text="A Highlander Tech" />
@@ -33,3 +39,6 @@ export function Fazemos() {
     </section>
   );
 }
+
+export { Fazemos };
+export type { Props as FazemosProps };
