@@ -1,7 +1,0 @@
-.button {
-  @apply shadow-none focus:outline-0;
-}
-
-.wrapper {
-  @apply flex flex-col w-40 pt-8 pb-4 pr-6 bg-white gap-2;
-}

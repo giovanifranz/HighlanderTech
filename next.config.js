@@ -4,6 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 module.exports = withBundleAnalyzer({
+  pageExtensions: ['page.tsx', 'api.ts'],
   reactStrictMode: true,
   swcMinify: true,
 });
