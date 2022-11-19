@@ -67,7 +67,7 @@ export function Formulario() {
   }, [onChange, setSelect]);
 
   return (
-    <section className="relative flex flex-col w-11/12 mx-0 max-w-[425px] h-[520px]">
+    <section className="relative mx-0 flex h-[520px] w-11/12 max-w-[425px] flex-col">
       <ToastContainer
         className="z-50"
         position="top-right"
@@ -83,20 +83,20 @@ export function Formulario() {
       <Subtitle text="Solicite seu orçamento!" />
       <ToastContainer className="z-50" />
       <form className="flex flex-col gap-2" onSubmit={handleSubmit(sendEmail)}>
-        <div className="flex items-center gap-2 justify-between w-full">
-          <div className="flex flex-col w-1/2">
+        <div className="flex w-full items-center justify-between gap-2">
+          <div className="flex w-1/2 flex-col">
             <label htmlFor="nome">Nome</label>
             <input
               type="text"
               id="nome"
-              className="w-full border border-solid border-black rounded p-2"
+              className="w-full rounded border border-solid border-black p-2"
               {...register('nome', { required: true })}
             />
           </div>
-          <div className="flex flex-col w-1/2">
+          <div className="flex w-1/2 flex-col">
             <label htmlFor="service">Serviço</label>
             <select
-              className="w-full border border-solid border-black rounded p-2 bg-white"
+              className="w-full rounded border border-solid border-black bg-white p-2"
               id="service"
               value={select}
               {...register('service', { required: true })}
@@ -107,36 +107,36 @@ export function Formulario() {
             </select>
           </div>
         </div>
-        <div className="flex items-center gap-2 justify-between w-full">
-          <div className="flex flex-col w-1/2">
+        <div className="flex w-full items-center justify-between gap-2">
+          <div className="flex w-1/2 flex-col">
             <label htmlFor="telefone">Telefone</label>
             <input
               type="text"
-              className="w-full border border-solid border-black rounded p-2"
+              className="w-full rounded border border-solid border-black p-2"
               id="telefone"
               {...register('telefone', { required: true })}
             />
           </div>
-          <div className="flex flex-col w-1/2">
+          <div className="flex w-1/2 flex-col">
             <label htmlFor="email">E-mail</label>
             <input
               type="email"
               id="email"
-              className="w-full border border-solid border-black rounded p-2"
+              className="w-full rounded border border-solid border-black p-2"
               {...register('email', { required: true, pattern: regex })}
             />
           </div>
         </div>
-        <section className="h-48 lg:h-60 w-full">
+        <section className="h-48 w-full lg:h-60">
           <label htmlFor="mensagem">Mensagem</label>
           <textarea
-            className="w-full border border-solid border-black rounded p-2 h-full"
+            className="h-full w-full rounded border border-solid border-black p-2"
             id="mensagem"
             {...register('mensagem', { required: true })}
           />
         </section>
         <button
-          className="absolute bottom-0 right-0 h-10 text-lg font-bold text-white bg-purple-200 rounded w-36 transition-all hover:opacity-80"
+          className="absolute bottom-0 right-0 h-10 w-36 rounded bg-purple-200 text-lg font-bold text-white transition-all hover:opacity-80"
           id="enviar"
           name="enviar"
           type="submit"

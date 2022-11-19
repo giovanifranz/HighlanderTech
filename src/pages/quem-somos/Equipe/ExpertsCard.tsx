@@ -22,7 +22,7 @@ function ExpertsCard({
   href,
 }: Props) {
   return (
-    <div className="w-60 h-64 bg-cyan-400 rounded-2xl flex flex-col items-center justify-center">
+    <div className="flex h-64 w-60 flex-col items-center justify-center rounded-2xl bg-cyan-400">
       <h1 className="text-lg font-bold text-purple-500">{name}</h1>
       <ul className={styles.list}>
         <div>

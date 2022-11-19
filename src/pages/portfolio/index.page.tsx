@@ -7,14 +7,14 @@ import { Card } from './Card';
 
 export default function Portfolio() {
   return (
-    <div className="flex flex-col justify-between w-11/12 mx-0 md:max-w-6xl">
+    <div className="mx-0 flex w-11/12 flex-col justify-between md:max-w-6xl">
       <Title text="Portfólio" />
       <Subtitle text="Conheça o nosso trabalho!" />
       <span className="text-center md:text-left">
         * Alguns sites abaixo foram feitos apenas para demonstração.
       </span>
 
-      <div className="flex flex-wrap justify-center w-full h-full mt-6 gap-10">
+      <div className="mt-6 flex h-full w-full flex-wrap justify-center gap-10">
         <Card
           srcImage={kyra}
           href="https://www.kyra.com.br/"

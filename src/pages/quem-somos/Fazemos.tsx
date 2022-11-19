@@ -8,7 +8,7 @@ type Props = {
 
 function Fazemos({ base64 }: Props) {
   return (
-    <section className="w-11/12 md:max-w-6xl mx-0 flex justify-center items-center flex-col md:flex-row gap-5">
+    <section className="mx-0 flex w-11/12 flex-col items-center justify-center gap-5 md:max-w-6xl md:flex-row">
       <Image
         src="/quem-somos/about.png"
         priority
@@ -19,10 +19,10 @@ function Fazemos({ base64 }: Props) {
         blurDataURL={base64}
         placeholder="blur"
       />
-      <article className="mx-0 flex flex-col text-center md:text-left flex-1">
+      <article className="mx-0 flex flex-1 flex-col text-center md:text-left">
         <Title text="A Highlander Tech" />
         <Subtitle text="O que nós fazemos?" />
-        <p className="text-lg my-8">
+        <p className="my-8 text-lg">
           A Highlander Tech é uma empresa que presta serviços de montagem e
           manutenção de computadores, completo com consultoria, além da criação
           de sites para pequenos negócios que querem entrar entrar no mundo

@@ -13,7 +13,7 @@ function Layout({ children }: Props) {
     <>
       <Seo />
       <Header />
-      <div className="h-full w-full py-20 md:pt-24 md:pb-28 mt-16 md:mt-0 flex flex-col items-center">
+      <div className="mt-16 flex h-full w-full flex-col items-center py-20 md:mt-0 md:pt-24 md:pb-28">
         {children}
       </div>
       <Footer />

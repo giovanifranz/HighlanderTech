@@ -13,13 +13,13 @@ function Card({ href, text, srcImage, demo = false }: Props) {
   return (
     <Link
       href={href}
-      className="relative flex justify-center w-4/5 bg-center bg-cover max-w-[352px] h-52 rounded-3xl hover:opacity-75"
+      className="relative flex h-52 w-4/5 max-w-[352px] justify-center rounded-3xl bg-cover bg-center hover:opacity-75"
       style={{ backgroundImage: `url(${srcImage.src})` }}
     >
-      <div className="absolute bottom-0 flex flex-col items-center w-full p-2 text-center bg-black/50 gap-2 rounded-b-3xl">
+      <div className="absolute bottom-0 flex w-full flex-col items-center gap-2 rounded-b-3xl bg-black/50 p-2 text-center">
         <h2 className="text-2xl text-white">{text}</h2>
         {demo && (
-          <span className="absolute text-lg text-white right-4 bottom-2">
+          <span className="absolute right-4 bottom-2 text-lg text-white">
             Demo
           </span>
         )}

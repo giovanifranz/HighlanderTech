@@ -4,7 +4,7 @@ import styles from './equipe.module.css';
 
 export function Equipe() {
   return (
-    <section className="flex items-center mt-10">
+    <section className="mt-10 flex items-center">
       <div className={styles.wrapper}>
         <ExpertsCard
           name="Iago Paz"
@@ -14,7 +14,7 @@ export function Equipe() {
           activity4="Assistência"
           href="https://www.linkedin.com/in/iago-paz-2164a2220"
         />
-        <span className="w-10 h-10 mx-10 rounded-full bg-cyan-400" />
+        <span className="mx-10 h-10 w-10 rounded-full bg-cyan-400" />
         <ExpertsCard
           name="Giovani Franz"
           activity1="Desenvolvimento"

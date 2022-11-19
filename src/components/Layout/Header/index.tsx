@@ -14,8 +14,8 @@ const Navigation = dynamic(
 function Header() {
   const width = useWindowsSize();
   return (
-    <header className="top-0 inset-x-0 py-4 shadow-md flex items-center justify-center bg-white fixed z-50">
-      <div className="w-11/12 md:w-4/5 max-w-7xl flex items-center justify-between mx-auto">
+    <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-center bg-white py-4 shadow-md">
+      <div className="mx-auto flex w-11/12 max-w-7xl items-center justify-between md:w-4/5">
         <Logo />
         {width > 720 ? <Navigation /> : <Dropdown />}
       </div>

@@ -17,7 +17,7 @@ function MenuItem({ href, label }: Props) {
 
   return (
     <DropdownMenu.Item
-      className="text-right text-gray-900 text-lg"
+      className="text-right text-lg text-gray-900"
       onClick={handleClick}
     >
       <a>{label}</a>
@@ -32,7 +32,7 @@ export default function Dropdown() {
         <Image src="/svgs/menu.svg" width="40" height="20" alt="menu" />
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
-        <DropdownMenu.Content className="flex flex-col w-40 pt-8 pb-4 pr-6 bg-white gap-2">
+        <DropdownMenu.Content className="flex w-40 flex-col gap-2 bg-white pt-8 pb-4 pr-6">
           <MenuItem href="/" label="Home" />
           <MenuItem href="/quem-somos" label="Quem Somos" />
           <MenuItem href="/portfolio" label="Portfólio" />

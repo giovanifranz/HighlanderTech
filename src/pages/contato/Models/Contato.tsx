@@ -11,12 +11,12 @@ function Contato({ Icon, title, description, isPurple = false }: Props) {
   return (
     <div
       className={`${
-        isPurple ? 'bg-purple-100 border-purple-500' : 'border-cyan-400'
-      } w-52 h-72 rounded-xl gap-5 flex justify-center items-center text-center border-4 border-solid flex-col transition-all`}
+        isPurple ? 'border-purple-500 bg-purple-100' : 'border-cyan-400'
+      } flex h-72 w-52 flex-col items-center justify-center gap-5 rounded-xl border-4 border-solid text-center transition-all`}
     >
       <Icon size={55} />
       <span className="text-lg font-bold">{title}</span>
-      <span className="text-xs font-semibold w-10/12">{description}</span>
+      <span className="w-10/12 text-xs font-semibold">{description}</span>
     </div>
   );
 }

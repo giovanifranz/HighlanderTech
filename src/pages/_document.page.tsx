@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="overflow-x-hidden text-black bg-cyan-200 relative">
+        <body className="relative overflow-x-hidden bg-cyan-200 text-black">
           <Main />
           <NextScript />
         </body>

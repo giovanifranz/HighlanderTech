@@ -6,7 +6,7 @@ type Props = {
 function Subtitle({ text, isRight = false }: Props) {
   return (
     <h2
-      className={`my-2 text-4xl font-extrabold text-center text-black ${
+      className={`my-2 text-center text-4xl font-extrabold text-black ${
         isRight ? 'md:text-right' : 'md:text-left'
       }`}
     >
