@@ -20,8 +20,10 @@ function Fazemos({ base64 }: Props) {
         placeholder="blur"
       />
       <article className="mx-0 flex flex-1 flex-col text-center md:text-left">
-        <Title text="A Highlander Tech" />
-        <Subtitle text="O que nós fazemos?" />
+        <header>
+          <Title text="A Highlander Tech" />
+          <Subtitle text="O que nós fazemos?" />
+        </header>
         <p className="my-8 text-lg">
           A Highlander Tech é uma empresa que presta serviços de montagem e
           manutenção de computadores, completo com consultoria, além da criação

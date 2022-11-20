@@ -24,18 +24,22 @@ function ExpertsCard({
   return (
     <div className="flex h-64 w-60 flex-col items-center justify-center rounded-2xl bg-cyan-400">
       <h1 className="text-lg font-bold text-purple-500">{name}</h1>
-      <ul className={styles.list}>
-        <div>
+      <div className={styles.list}>
+        <ul>
           <li>{activity1}</li>
           <li>{activity2}</li>
-        </div>
-        <div>
+        </ul>
+        <ul>
           <li>{activity3}</li>
           <li>{activity4}</li>
-        </div>
-      </ul>
+        </ul>
+      </div>
       <Link href={href} target="_blank">
-        <TiSocialLinkedinCircular size="100" className="text-purple-500" />
+        <TiSocialLinkedinCircular
+          size="100"
+          className="text-purple-500"
+          aria-label="linkedin"
+        />
       </Link>
     </div>
   );

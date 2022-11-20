@@ -17,9 +17,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 export default function QuemSomos({ base64 }: Props) {
   return (
-    <>
+    <main>
       <Fazemos base64={base64} />
       <Equipe />
-    </>
+    </main>
   );
 }
