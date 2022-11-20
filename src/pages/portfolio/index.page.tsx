@@ -11,7 +11,7 @@ export default function Portfolio() {
       <article>
         <header>
           <Title text="Portfólio" />
-          <Subtitle text="Conheça o nosso trabalho!" />
+          <Subtitle>Conheça o nosso trabalho!</Subtitle>
         </header>
         <span className="text-center md:text-left">
           * Alguns sites abaixo foram feitos apenas para demonstração.

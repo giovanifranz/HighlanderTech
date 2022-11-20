@@ -8,7 +8,7 @@ export function Cards() {
 
   return (
     <section className="flex-1">
-      <Subtitle text="Lembre-se de informar:" />
+      <Subtitle>Lembre-se de informar:</Subtitle>
       <div className="mt-16 flex flex-wrap items-center justify-center gap-2">
         {modelsContatos[select][0]}
         {modelsContatos[select][1]}

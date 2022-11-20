@@ -22,7 +22,7 @@ function Fazemos({ base64 }: Props) {
       <article className="mx-0 flex flex-1 flex-col text-center md:text-left">
         <header>
           <Title text="A Highlander Tech" />
-          <Subtitle text="O que nós fazemos?" />
+          <Subtitle>O que nós fazemos?</Subtitle>
         </header>
         <p className="my-8 text-lg">
           A Highlander Tech é uma empresa que presta serviços de montagem e

@@ -48,7 +48,7 @@ function Card({
       >
         <header>
           <Title text={title} isRight={isRight} />
-          <Subtitle text={subTitle} isRight={isRight} />
+          <Subtitle isRight={isRight}>{subTitle}</Subtitle>
         </header>
         <p className={'my-8 text-lg md:mb-0'}>{description}</p>
         <button

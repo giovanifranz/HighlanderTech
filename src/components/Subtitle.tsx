@@ -1,17 +1,21 @@
-type Props = {
-  text: string;
-  isRight?: boolean;
-};
+import { Slot } from '@radix-ui/react-slot';
+import { HTMLAttributes } from 'react';
 
-function Subtitle({ text, isRight = false }: Props) {
+type Props = {
+  isRight?: boolean;
+  asChild?: boolean;
+} & HTMLAttributes<HTMLHeadElement>;
+
+function Subtitle({ asChild, isRight = false, ...props }: Props) {
+  const Component = asChild ? Slot : 'h2';
+
   return (
-    <h2
+    <Component
       className={`my-2 text-center text-4xl font-extrabold text-black ${
         isRight ? 'md:text-right' : 'md:text-left'
       }`}
-    >
-      {text}
-    </h2>
+      {...props}
+    />
   );
 }
 

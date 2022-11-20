@@ -80,7 +80,9 @@ export function Formulario() {
         draggable
         pauseOnHover
       />
-      <Subtitle text="Solicite seu orçamento!" />
+      <Subtitle asChild>
+        <h1>Solicite seu orçamento!</h1>
+      </Subtitle>
       <ToastContainer className="z-50" />
       <form className="flex flex-col gap-2" onSubmit={handleSubmit(sendEmail)}>
         <div className="flex w-full items-center justify-between gap-2">
@@ -136,7 +138,7 @@ export function Formulario() {
           />
         </section>
         <button
-          className="absolute bottom-0 right-0 h-10 w-36 rounded bg-purple-200 text-lg font-bold text-white transition-all hover:opacity-80"
+          className="absolute bottom-0 right-0 h-10 w-36 rounded bg-purple-500 text-lg font-bold text-white transition-all hover:opacity-80"
           id="enviar"
           name="enviar"
           type="submit"
