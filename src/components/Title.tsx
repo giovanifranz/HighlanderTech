@@ -6,7 +6,7 @@ type Props = {
 function Title({ text, isRight = false }: Props) {
   return (
     <h1
-      className={`text-center text-sm text-cyan-500 font-bold uppercase ${
+      className={`text-center text-sm font-bold uppercase text-cyan-500 ${
         isRight ? 'md:text-right' : 'md:text-left'
       }`}
     >
