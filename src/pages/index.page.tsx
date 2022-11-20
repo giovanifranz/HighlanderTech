@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 export default function Home({ feature_1, feature_2, feature_3 }: Props) {
   return (
-    <>
+    <main>
       <Card
         isFirst
         isRight
@@ -55,6 +55,6 @@ export default function Home({ feature_1, feature_2, feature_3 }: Props) {
         type="maintenance"
         base64={feature_3}
       />
-    </>
+    </main>
   );
 }

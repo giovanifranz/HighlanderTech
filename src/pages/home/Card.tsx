@@ -6,8 +6,6 @@ import { useRouter } from 'next/router';
 
 import { Subtitle, Title } from 'components';
 
-import styles from './card.module.css';
-
 type Props = {
   title: string;
   subTitle: string;
@@ -38,18 +36,28 @@ function Card({
   }, [router, setSelect, type]);
 
   return (
-    <div className={`${styles.wrapper} ${!isRight && styles.reverse}`}>
+    <section
+      className={`${'w-11/12 md:max-w-6xl mx-0 flex justify-between items-center gap-2 md:gap-12 flex-col md:flex-row'} ${
+        !isRight && 'md:flex-row-reverse'
+      }`}
+    >
       <article
-        className={`${styles.article} ${
-          !isFirst && styles['others-articles']
+        className={`w-11/12 md:w-[560px] md:p-10 relative md:-mt-20 text-center flex flex-col items-center md:block ${
+          isFirst && 'mt-8 md:mt-0'
         } ${isRight ? 'md:text-right' : 'md:text-left'}`}
       >
-        <Title text={title} isRight={isRight} />
-        <Subtitle text={subTitle} isRight={isRight} />
-        <p className={styles.text}>{description}</p>
+        <header>
+          <Title text={title} isRight={isRight} />
+          <Subtitle text={subTitle} isRight={isRight} />
+        </header>
+        <p className={'my-8 md:mb-0 text-lg'}>{description}</p>
         <button
           type="button"
-          className={isRight ? styles.right : styles.left}
+          className={`text-lg text-purple-500 font-semibold md:absolute flex items-center justify-center mb-8 md:mb-0 mt-2 hover:opacity-70 transition-all hover:cursor-pointer ${
+            isRight
+              ? 'text-left right-0 md:pr-10'
+              : 'text-right left-0 md:pl-10'
+          }`}
           onClick={handleClick}
         >
           <p>Solicite seu orçamento</p>{' '}
@@ -65,7 +73,7 @@ function Card({
         blurDataURL={base64}
         placeholder="blur"
       />
-    </div>
+    </section>
   );
 }
 

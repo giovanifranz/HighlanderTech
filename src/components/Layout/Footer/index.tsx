@@ -13,22 +13,26 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.wrapper}>
-        <nav className={styles.navbar}>
+        <nav className={styles.navbar} aria-label="footer">
           <Logo />
           <Link
             href="https://api.whatsapp.com/send?phone=555199188952"
             target="_blank"
           >
-            <RiWhatsappFill className={styles.icon} />
+            <RiWhatsappFill className={styles.icon} aria-label="whatsapp" />
           </Link>
           <Link
             href="https://www.instagram.com/highlandertechbr/"
             target="_blank"
           >
-            <RiInstagramFill className={styles.icon} target="_blank" />
+            <RiInstagramFill
+              className={styles.icon}
+              target="_blank"
+              aria-label="instagram"
+            />
           </Link>
           <Link href="https://www.facebook.com/Highlandertech" target="_blank">
-            <RiFacebookFill className={styles.icon} />
+            <RiFacebookFill className={styles.icon} aria-label="facebook" />
           </Link>
         </nav>
         <p className={styles.text}>
