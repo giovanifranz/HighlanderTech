@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 export default function Home({ feature_1, feature_2, feature_3 }: Props) {
   return (
-    <main>
+    <main className="flex flex-col items-center gap-12">
       <Card
         isFirst
         isRight

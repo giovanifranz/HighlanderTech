@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 export default function QuemSomos({ base64 }: Props) {
   return (
-    <main>
+    <main className="flex flex-col items-center">
       <Fazemos base64={base64} />
       <Equipe />
     </main>

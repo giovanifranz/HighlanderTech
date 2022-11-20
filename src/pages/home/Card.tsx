@@ -37,14 +37,14 @@ function Card({
 
   return (
     <section
-      className={`${'mx-0 flex w-11/12 flex-col items-center justify-between gap-2 md:max-w-6xl md:flex-row md:gap-12'} ${
+      className={`mx-0 flex w-11/12 flex-col items-center justify-between gap-2 md:max-w-6xl md:flex-row ${
         !isRight && 'md:flex-row-reverse'
       }`}
     >
       <article
         className={`relative flex w-11/12 flex-col items-center text-center md:-mt-20 md:block md:w-[560px] md:p-10 ${
-          isFirst && 'mt-8 md:mt-0'
-        } ${isRight ? 'md:text-right' : 'md:text-left'}`}
+          isRight ? 'md:text-right' : 'md:text-left'
+        }`}
       >
         <header>
           <Title text={title} isRight={isRight} />
