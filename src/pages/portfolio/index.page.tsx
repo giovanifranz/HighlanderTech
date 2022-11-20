@@ -7,13 +7,16 @@ import { Card } from './Card';
 
 export default function Portfolio() {
   return (
-    <div className="mx-0 flex w-11/12 flex-col justify-between md:max-w-6xl">
-      <Title text="Portfólio" />
-      <Subtitle text="Conheça o nosso trabalho!" />
-      <span className="text-center md:text-left">
-        * Alguns sites abaixo foram feitos apenas para demonstração.
-      </span>
-
+    <main className="mx-0 flex w-11/12 flex-col justify-between md:max-w-6xl">
+      <article>
+        <header>
+          <Title text="Portfólio" />
+          <Subtitle text="Conheça o nosso trabalho!" />
+        </header>
+        <span className="text-center md:text-left">
+          * Alguns sites abaixo foram feitos apenas para demonstração.
+        </span>
+      </article>
       <div className="mt-6 flex h-full w-full flex-wrap justify-center gap-10">
         <Card
           srcImage={kyra}
@@ -32,6 +35,6 @@ export default function Portfolio() {
           demo
         />
       </div>
-    </div>
+    </main>
   );
 }

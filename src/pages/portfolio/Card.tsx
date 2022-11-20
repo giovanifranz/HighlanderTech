@@ -23,7 +23,7 @@ function Card({ href, text, srcImage, demo = false }: Props) {
             Demo
           </span>
         )}
-        <Image src="/svgs/arrow.svg" alt="arrow" height={36} width={36} />
+        <Image src="/svgs/arrow.svg" alt="" height={36} width={36} />
       </div>
     </Link>
   );
