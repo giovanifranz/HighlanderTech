@@ -2,6 +2,7 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import Image from 'next/image';
 import { useCallback } from 'react';
 import { useRouter } from 'next/router';
+import imgMenu from '../../../assets/svgs/menu.svg';
 
 type Props = {
   href: string;
@@ -29,7 +30,7 @@ export default function Dropdown() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className="shadow-none focus:outline-0">
-        <Image src="/svgs/menu.svg" width="40" height="20" alt="menu" />
+        <Image src={imgMenu} width="40" height="20" alt="" />
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
         <DropdownMenu.Content className="flex w-40 flex-col gap-2 bg-white pt-8 pb-4 pr-6">

@@ -1,8 +1,8 @@
 import { Subtitle, Title } from 'components';
 
-import entremalhas from '../../../public/portfolio/entremalhas.webp';
-import kyra from '../../../public/portfolio/kyra.webp';
-import oriental from '../../../public/portfolio/oriental.webp';
+import entremalhas from '../../assets/portfolio/entremalhas.webp';
+import kyra from '../../assets/portfolio/kyra.webp';
+import oriental from '../../assets/portfolio/oriental.webp';
 import { Card } from './Card';
 
 export default function Portfolio() {
@@ -19,17 +19,17 @@ export default function Portfolio() {
       </article>
       <div className="mt-6 flex h-full w-full flex-wrap justify-center gap-10">
         <Card
-          srcImage={kyra}
+          image={kyra}
           href="https://www.kyra.com.br/"
           text="Kyra Pesquisa"
         />
         <Card
-          srcImage={entremalhas}
+          image={entremalhas}
           href="https://entremalhas.com.br/"
           text="Entremalhas"
         />
         <Card
-          srcImage={oriental}
+          image={oriental}
           href="https://oriental.highlandertech.com.br/"
           text="Oriental Wing Chun"
           demo

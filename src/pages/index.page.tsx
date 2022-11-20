@@ -1,12 +1,17 @@
 import { GetStaticProps } from 'next';
 import { getPlaiceholder } from 'plaiceholder';
 import { Card } from './home/Card';
+
+const imgFeature_1 = '/home/feature_1.png';
+const imgFeature_2 = '/home/feature_2.png';
+const imgFeature_3 = '/home/feature_3.png';
+
 type Props = { feature_1: string; feature_2: string; feature_3: string };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const { base64: feature_1 } = await getPlaiceholder('/home/feature_1.png');
-  const { base64: feature_2 } = await getPlaiceholder('/home/feature_2.png');
-  const { base64: feature_3 } = await getPlaiceholder('/home/feature_3.png');
+  const { base64: feature_1 } = await getPlaiceholder(imgFeature_1);
+  const { base64: feature_2 } = await getPlaiceholder(imgFeature_2);
+  const { base64: feature_3 } = await getPlaiceholder(imgFeature_3);
 
   return {
     props: {
@@ -28,7 +33,7 @@ export default function Home({ feature_1, feature_2, feature_3 }: Props) {
         description="Precisando de uma página para o seu negócio? Uma página com a sua
         identidade, integrado com seu e-mail comercial ajuda a alavancar
         suas conversões, além de ser muito mais profissional."
-        image="/home/feature_1.png"
+        image={imgFeature_1}
         type="sites"
         base64={feature_1}
       />
@@ -39,7 +44,7 @@ export default function Home({ feature_1, feature_2, feature_3 }: Props) {
         canal do youtube? Seja só o gabinete ou o setup completo, montamos o
         seu computador de acordo com a SUA necessidade, com nossa consultoria
         completa."
-        image="/home/feature_2.png"
+        image={imgFeature_2}
         type="mounting"
         base64={feature_2}
       />
@@ -51,7 +56,7 @@ export default function Home({ feature_1, feature_2, feature_3 }: Props) {
         parte essencial das nossas vidas - por isso oferecemos manutenção e
         assistência para computadores, sejam eles para escritório ou para
         jogos."
-        image="/home/feature_3.png"
+        image={imgFeature_3}
         type="maintenance"
         base64={feature_3}
       />

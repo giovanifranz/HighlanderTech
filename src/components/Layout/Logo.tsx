@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import highlanderLogo from '../../assets/svgs/logo.svg';
 
 function Logo() {
   return (
     <Link href="/">
       <Image
-        src="/svgs/logo.svg"
+        src={highlanderLogo}
         alt="Highlander Tech"
         width="195"
         height="30"

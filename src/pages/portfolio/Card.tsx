@@ -1,20 +1,21 @@
 import type { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import Image from 'next/image';
+import imgArrow from '../../assets/svgs/arrow.svg';
 
 type Props = {
   href: string;
   text: string;
-  srcImage: StaticImageData;
+  image: StaticImageData;
   demo?: boolean;
 };
 
-function Card({ href, text, srcImage, demo = false }: Props) {
+function Card({ href, text, image, demo = false }: Props) {
   return (
     <Link
       href={href}
       className="relative flex h-52 w-4/5 max-w-[352px] justify-center rounded-3xl bg-cover bg-center hover:opacity-75"
-      style={{ backgroundImage: `url(${srcImage.src})` }}
+      style={{ backgroundImage: `url(${image.src})` }}
     >
       <div className="absolute bottom-0 flex w-full flex-col items-center gap-2 rounded-b-3xl bg-black/50 p-2 text-center">
         <h2 className="text-2xl text-white">{text}</h2>
@@ -23,7 +24,7 @@ function Card({ href, text, srcImage, demo = false }: Props) {
             Demo
           </span>
         )}
-        <Image src="/svgs/arrow.svg" alt="" height={36} width={36} />
+        <Image src={imgArrow} alt="" height={36} width={36} />
       </div>
     </Link>
   );

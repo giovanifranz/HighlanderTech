@@ -1,16 +1,16 @@
-import Image from 'next/image';
-
+import Image, { StaticImageData } from 'next/image';
 import { Subtitle, Title } from 'components';
 
 type Props = {
   base64: string;
+  image: StaticImageData['src'];
 };
 
-function Fazemos({ base64 }: Props) {
+function Fazemos({ base64, image }: Props) {
   return (
     <section className="mx-0 flex w-11/12 flex-col items-center justify-center gap-5 md:max-w-6xl md:flex-row">
       <Image
-        src="/quem-somos/about.png"
+        src={image}
         priority
         loading="eager"
         alt="Sobre"
