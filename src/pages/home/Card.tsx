@@ -53,6 +53,7 @@ function Card({
         <p className={'my-8 text-lg md:mb-0'}>{description}</p>
         <button
           type="button"
+          role="link"
           className={`mb-8 mt-2 flex items-center justify-center text-lg font-semibold text-purple-500 transition-all hover:cursor-pointer hover:opacity-70 md:absolute md:mb-0 ${
             isRight
               ? 'right-0 text-left md:pr-10'
