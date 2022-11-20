@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import type { ToastOptions } from 'react-toastify';
 import { toast, ToastContainer } from 'react-toastify';
@@ -62,7 +62,7 @@ export function Formulario() {
     [reset, select],
   );
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setSelect(onChange);
   }, [onChange, setSelect]);
 
