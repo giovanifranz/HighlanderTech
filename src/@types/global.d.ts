@@ -1,11 +1,11 @@
-type Select = 'sites' | 'maintenance' | 'mounting';
+type Select = 'sites' | 'maintenance' | 'mounting'
 
 type FormValues = {
-  service: Select;
-  nome: string;
-  email: string;
-  telefone: string;
-  mensagem: string;
-};
+  service: Select
+  nome: string
+  email: string
+  telefone: string
+  mensagem: string
+}
 
-type EmptyObject = Record<string, never>;
+type EmptyObject = Record<string, never>

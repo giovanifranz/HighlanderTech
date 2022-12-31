@@ -1,14 +1,14 @@
-import type { StaticImageData } from 'next/image';
-import Link from 'next/link';
-import Image from 'next/image';
-import imgArrow from '../../assets/svgs/arrow.svg';
+import type { StaticImageData } from 'next/image'
+import Link from 'next/link'
+import Image from 'next/image'
+import imgArrow from '../../assets/svgs/arrow.svg'
 
 type Props = {
-  href: string;
-  text: string;
-  image: StaticImageData;
-  demo?: boolean;
-};
+  href: string
+  text: string
+  image: StaticImageData
+  demo?: boolean
+}
 
 function Card({ href, text, image, demo = false }: Props) {
   return (
@@ -27,8 +27,8 @@ function Card({ href, text, image, demo = false }: Props) {
         <Image src={imgArrow} alt="" height={36} width={36} />
       </div>
     </Link>
-  );
+  )
 }
 
-export { Card };
-export type { Props as CardProps };
+export { Card }
+export type { Props as CardProps }

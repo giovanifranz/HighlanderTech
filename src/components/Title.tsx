@@ -1,7 +1,7 @@
 type Props = {
-  text: string;
-  isRight?: boolean;
-};
+  text: string
+  isRight?: boolean
+}
 
 function Title({ text, isRight = false }: Props) {
   return (
@@ -12,8 +12,8 @@ function Title({ text, isRight = false }: Props) {
     >
       {text}
     </h1>
-  );
+  )
 }
 
-export { Title };
-export type { Props as TitleProps };
+export { Title }
+export type { Props as TitleProps }

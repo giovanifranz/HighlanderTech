@@ -1,10 +1,10 @@
-import type { PropsWithChildren } from 'react';
-import NextLink from 'next/link';
+import type { PropsWithChildren } from 'react'
+import NextLink from 'next/link'
 
 type Props = PropsWithChildren<{
-  href: string;
-  target?: string;
-}>;
+  href: string
+  target?: string
+}>
 
 function Link({ href, target, children }: Props) {
   return (
@@ -16,8 +16,8 @@ function Link({ href, target, children }: Props) {
     >
       {children}
     </NextLink>
-  );
+  )
 }
 
-export { Link };
-export type { Props as LinkProps };
+export { Link }
+export type { Props as LinkProps }

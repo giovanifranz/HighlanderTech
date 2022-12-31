@@ -1,12 +1,12 @@
-import { useRouter } from 'next/router';
-import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router'
+import { NextSeo } from 'next-seo'
 
-const BASE_URL = 'https://www.highlandertech.com.br';
+const BASE_URL = 'https://www.highlandertech.com.br'
 
 function Seo() {
-  const { pathname } = useRouter();
-  const canonical = `${BASE_URL}${pathname}`;
-  const title = 'Highlander Tech';
+  const { pathname } = useRouter()
+  const canonical = `${BASE_URL}${pathname}`
+  const title = 'Highlander Tech'
 
   return (
     <NextSeo
@@ -31,7 +31,7 @@ function Seo() {
         site_name: title,
       }}
     />
-  );
+  )
 }
 
-export { Seo };
+export { Seo }

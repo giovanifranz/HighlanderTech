@@ -1,17 +1,17 @@
-import { TiSocialLinkedinCircular } from 'react-icons/ti';
+import { TiSocialLinkedinCircular } from 'react-icons/ti'
 
-import { Link } from '../../../components';
+import { Link } from '../../../components'
 
-import styles from './equipe.module.css';
+import styles from './equipe.module.css'
 
 type Props = {
-  name: string;
-  activity1: string;
-  activity2: string;
-  activity3: string;
-  activity4: string;
-  href: string;
-};
+  name: string
+  activity1: string
+  activity2: string
+  activity3: string
+  activity4: string
+  href: string
+}
 
 function ExpertsCard({
   name,
@@ -42,7 +42,7 @@ function ExpertsCard({
         />
       </Link>
     </div>
-  );
+  )
 }
 
-export { ExpertsCard };
+export { ExpertsCard }

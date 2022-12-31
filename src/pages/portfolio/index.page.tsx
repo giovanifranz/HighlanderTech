@@ -1,9 +1,9 @@
-import { Subtitle, Title } from 'components';
+import { Subtitle, Title } from 'components'
 
-import entremalhas from '../../assets/portfolio/entremalhas.webp';
-import kyra from '../../assets/portfolio/kyra.webp';
-import oriental from '../../assets/portfolio/oriental.webp';
-import { Card } from './Card';
+import entremalhas from '../../assets/portfolio/entremalhas.webp'
+import kyra from '../../assets/portfolio/kyra.webp'
+import oriental from '../../assets/portfolio/oriental.webp'
+import { Card } from './Card'
 
 export default function Portfolio() {
   return (
@@ -36,5 +36,5 @@ export default function Portfolio() {
         />
       </div>
     </main>
-  );
+  )
 }

@@ -1,11 +1,11 @@
-import type { IconType } from 'react-icons';
+import type { IconType } from 'react-icons'
 
 type Props = {
-  Icon: IconType;
-  title: string;
-  description: string;
-  isPurple?: boolean;
-};
+  Icon: IconType
+  title: string
+  description: string
+  isPurple?: boolean
+}
 
 function Contato({ Icon, title, description, isPurple = false }: Props) {
   return (
@@ -18,8 +18,8 @@ function Contato({ Icon, title, description, isPurple = false }: Props) {
       <span className="text-lg font-bold">{title}</span>
       <span className="w-10/12 text-xs font-semibold">{description}</span>
     </div>
-  );
+  )
 }
 
-export { Contato };
-export type { Props as ContatoProps };
+export { Contato }
+export type { Props as ContatoProps }

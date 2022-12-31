@@ -1,5 +1,5 @@
-import { Formulario } from './Formulario';
-import { Cards } from './Cards';
+import { Formulario } from './Formulario'
+import { Cards } from './Cards'
 
 export default function Contato() {
   return (
@@ -7,5 +7,5 @@ export default function Contato() {
       <Formulario />
       <Cards />
     </main>
-  );
+  )
 }

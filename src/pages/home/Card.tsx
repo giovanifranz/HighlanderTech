@@ -1,21 +1,21 @@
-import { useCallback } from 'react';
-import { BsArrowRight } from 'react-icons/bs';
-import { useSelect } from 'hooks/useSelect';
-import Image, { StaticImageData } from 'next/image';
-import { useRouter } from 'next/router';
+import { useCallback } from 'react'
+import { BsArrowRight } from 'react-icons/bs'
+import { useSelect } from 'hooks/useSelect'
+import Image, { StaticImageData } from 'next/image'
+import { useRouter } from 'next/router'
 
-import { Subtitle, Title } from 'components';
+import { Subtitle, Title } from 'components'
 
 type Props = {
-  title: string;
-  subTitle: string;
-  image: StaticImageData['src'];
-  description: string;
-  base64: string;
-  type: Select;
-  isRight?: boolean;
-  isFirst?: boolean;
-};
+  title: string
+  subTitle: string
+  image: StaticImageData['src']
+  description: string
+  base64: string
+  type: Select
+  isRight?: boolean
+  isFirst?: boolean
+}
 
 function Card({
   title,
@@ -27,13 +27,13 @@ function Card({
   isFirst = false,
   base64,
 }: Props) {
-  const { setSelect } = useSelect();
-  const router = useRouter();
+  const { setSelect } = useSelect()
+  const router = useRouter()
 
   const handleClick = useCallback(() => {
-    setSelect(type);
-    router.push('/contato');
-  }, [router, setSelect, type]);
+    setSelect(type)
+    router.push('/contato')
+  }, [router, setSelect, type])
 
   return (
     <section
@@ -75,8 +75,8 @@ function Card({
         placeholder="blur"
       />
     </section>
-  );
+  )
 }
 
-export { Card };
-export type { Props as FeatureProps };
+export { Card }
+export type { Props as FeatureProps }

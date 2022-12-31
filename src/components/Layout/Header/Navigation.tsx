@@ -1,4 +1,4 @@
-import { Link } from 'components';
+import { Link } from 'components'
 
 export default function Navigation() {
   return (
@@ -8,5 +8,5 @@ export default function Navigation() {
       <Link href="/portfolio">Portfólio</Link>
       <Link href="/contato">Contato</Link>
     </nav>
-  );
+  )
 }

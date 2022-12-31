@@ -1,6 +1,6 @@
-import { ExpertsCard } from './ExpertsCard';
+import { ExpertsCard } from './ExpertsCard'
 
-import styles from './equipe.module.css';
+import styles from './equipe.module.css'
 
 export function Equipe() {
   return (
@@ -25,5 +25,5 @@ export function Equipe() {
         />
       </div>
     </section>
-  );
+  )
 }

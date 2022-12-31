@@ -1,12 +1,12 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from 'react'
 
-import { Seo } from 'components';
-import { Footer } from './Footer';
-import { Header } from './Header';
+import { Seo } from 'components'
+import { Footer } from './Footer'
+import { Header } from './Header'
 
 type Props = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 function Layout({ children }: Props) {
   return (
@@ -18,7 +18,7 @@ function Layout({ children }: Props) {
       </div>
       <Footer />
     </>
-  );
+  )
 }
 
-export { Layout };
+export { Layout }

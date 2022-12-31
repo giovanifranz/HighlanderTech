@@ -1,10 +1,10 @@
-import { Subtitle } from 'components';
-import { useSelect } from 'hooks/useSelect';
+import { Subtitle } from 'components'
+import { useSelect } from 'hooks/useSelect'
 
-import { modelsContatos, SUA_DUVIDA } from './Models';
+import { modelsContatos, SUA_DUVIDA } from './Models'
 
 export function Cards() {
-  const { select } = useSelect();
+  const { select } = useSelect()
 
   return (
     <section className="flex-1">
@@ -15,5 +15,5 @@ export function Cards() {
         {SUA_DUVIDA}
       </div>
     </section>
-  );
+  )
 }

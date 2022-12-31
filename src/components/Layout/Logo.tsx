@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import highlanderLogo from '../../assets/svgs/logo.svg';
+import Link from 'next/link'
+import Image from 'next/image'
+import highlanderLogo from '../../assets/svgs/logo.svg'
 
 function Logo() {
   return (
@@ -12,7 +12,7 @@ function Logo() {
         height="30"
       />
     </Link>
-  );
+  )
 }
 
-export { Logo };
+export { Logo }

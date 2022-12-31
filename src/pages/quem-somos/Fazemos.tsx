@@ -1,10 +1,10 @@
-import Image, { StaticImageData } from 'next/image';
-import { Subtitle, Title } from 'components';
+import Image, { StaticImageData } from 'next/image'
+import { Subtitle, Title } from 'components'
 
 type Props = {
-  base64: string;
-  image: StaticImageData['src'];
-};
+  base64: string
+  image: StaticImageData['src']
+}
 
 function Fazemos({ base64, image }: Props) {
   return (
@@ -37,8 +37,8 @@ function Fazemos({ base64, image }: Props) {
         </p>
       </article>
     </section>
-  );
+  )
 }
 
-export { Fazemos };
-export type { Props as FazemosProps };
+export { Fazemos }
+export type { Props as FazemosProps }

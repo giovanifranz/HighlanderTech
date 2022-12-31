@@ -1,13 +1,9 @@
-import { Link } from 'components';
-import { Logo } from './Logo';
+import { Link } from 'components'
+import { Logo } from './Logo'
 
-import {
-  RiFacebookFill,
-  RiInstagramFill,
-  RiWhatsappFill,
-} from 'react-icons/ri';
+import { RiFacebookFill, RiInstagramFill, RiWhatsappFill } from 'react-icons/ri'
 
-const styledIcon = 'text-purple-500 ml-3 md:ml-0 text-2xl hover:opacity-70';
+const styledIcon = 'text-purple-500 ml-3 md:ml-0 text-2xl hover:opacity-70'
 
 function Footer() {
   return (
@@ -53,7 +49,7 @@ function Footer() {
         </p>
       </div>
     </footer>
-  );
+  )
 }
 
-export { Footer };
+export { Footer }

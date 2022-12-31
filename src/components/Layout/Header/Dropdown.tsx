@@ -1,20 +1,20 @@
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import Image from 'next/image';
-import { useCallback } from 'react';
-import { useRouter } from 'next/router';
-import imgMenu from '../../../assets/svgs/menu.svg';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+import Image from 'next/image'
+import { useCallback } from 'react'
+import { useRouter } from 'next/router'
+import imgMenu from '../../../assets/svgs/menu.svg'
 
 type Props = {
-  href: string;
-  label: string;
-};
+  href: string
+  label: string
+}
 
 function MenuItem({ href, label }: Props) {
-  const router = useRouter();
+  const router = useRouter()
 
   const handleClick = useCallback(() => {
-    router.push(href);
-  }, [href, router]);
+    router.push(href)
+  }, [href, router])
 
   return (
     <DropdownMenu.Item
@@ -23,7 +23,7 @@ function MenuItem({ href, label }: Props) {
     >
       <a>{label}</a>
     </DropdownMenu.Item>
-  );
+  )
 }
 
 export default function Dropdown() {
@@ -41,5 +41,5 @@ export default function Dropdown() {
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
-  );
+  )
 }
