@@ -61,7 +61,7 @@ export function Formulario() {
     resolver: zodResolver(emailFormSchema),
   })
 
-  const validateForm = useCallback(() => {
+  const ValidateForm = useCallback(() => {
     const errorToast = (message?: string) =>
       toast(message, {
         ...TOAST_CONFIG,
@@ -210,7 +210,7 @@ export function Formulario() {
         </section>
         <button
           disabled={isSubmitting}
-          onClick={validateForm}
+          onClick={ValidateForm}
           className="absolute bottom-0 right-0 h-10 w-36 rounded bg-purple-500 text-lg font-bold text-white transition-all hover:opacity-80"
           id="enviar"
           name="enviar"
