@@ -137,10 +137,6 @@ export function Formulario() {
     setSelect(onChange)
   }, [onChange, setSelect])
 
-  useEffect(() => {
-    validateForm()
-  }, [validateForm])
-
   return (
     <section className="relative mx-0 flex h-[520px] w-11/12 max-w-[425px] flex-col">
       <ToastContainer
@@ -214,6 +210,7 @@ export function Formulario() {
         </section>
         <button
           disabled={isSubmitting}
+          onClick={validateForm}
           className="absolute bottom-0 right-0 h-10 w-36 rounded bg-purple-500 text-lg font-bold text-white transition-all hover:opacity-80"
           id="enviar"
           name="enviar"
