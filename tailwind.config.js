@@ -1,11 +1,18 @@
-const colors = require('tailwindcss/colors');
+const colors = require('tailwindcss/colors')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    extend: {
+      fontFamily: {
+        primary: ['var(--inter-font)', ...fontFamily.sans],
+      },
+    },
     colors: {
       white: '#fff',
       purple: {
@@ -26,4 +33,4 @@ module.exports = {
       base: ['Inter', 'sans-serif'],
     },
   },
-};
+}

@@ -6,16 +6,6 @@ export default class MyDocument extends Document {
       <Html lang="pt-BR" className="scroll-smooth antialiased">
         <Head>
           <meta name="theme-color" content="#F3FEFF" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin=""
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap"
-            rel="stylesheet"
-          />
         </Head>
         <body className="relative overflow-x-hidden bg-cyan-200 text-black">
           <Main />
