@@ -1,4 +1,3 @@
-import { SelectProvider } from 'hooks/useSelect'
 import type { AppProps } from 'next/app'
 import { Analytics } from '@vercel/analytics/react'
 import Router from 'next/router'
@@ -32,7 +31,7 @@ function App({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
-    <SelectProvider>
+    <>
       <Head>
         <title>Highlander Tech</title>
         <style jsx global>
@@ -47,7 +46,7 @@ function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
         <Analytics />
       </Layout>
-    </SelectProvider>
+    </>
   )
 }
 

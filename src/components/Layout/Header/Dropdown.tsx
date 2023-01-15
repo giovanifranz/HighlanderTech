@@ -12,8 +12,8 @@ type Props = {
 function MenuItem({ href, label }: Props) {
   const router = useRouter()
 
-  const handleClick = useCallback(() => {
-    router.push(href)
+  const handleClick = useCallback(async () => {
+    await router.push(href)
   }, [href, router])
 
   return (

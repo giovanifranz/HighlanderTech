@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { BsArrowRight } from 'react-icons/bs'
-import { useSelect } from 'hooks/useSelect'
+import { useSelect } from 'stores/useSelect'
 import Image, { StaticImageData } from 'next/image'
 import { useRouter } from 'next/router'
 
@@ -30,9 +30,9 @@ function Card({
   const { setSelect } = useSelect()
   const router = useRouter()
 
-  const handleClick = useCallback(() => {
+  const handleClick = useCallback(async () => {
     setSelect(type)
-    router.push('/contato')
+    await router.push('/contato')
   }, [router, setSelect, type])
 
   return (

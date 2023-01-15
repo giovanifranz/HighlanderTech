@@ -6,7 +6,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { Subtitle } from 'components'
-import { useSelect } from 'hooks/useSelect'
+import { useSelect } from 'stores/useSelect'
 
 const TOAST_CONFIG: ToastOptions = {
   position: 'top-right',
