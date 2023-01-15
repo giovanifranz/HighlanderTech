@@ -3,12 +3,13 @@ import { Analytics } from '@vercel/analytics/react'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import { useEffect } from 'react'
-import { Layout } from '../components'
+import { Layout } from 'components'
 import { Inter } from '@next/font/google'
+import { trpc } from 'utils/trpc'
 
 import 'react-toastify/dist/ReactToastify.css'
-import '../styles/nprogress.css'
-import '../styles/global.css'
+import 'styles/nprogress.css'
+import 'styles/global.css'
 import { axeAccessibilityReporter } from 'utils/axeAccessibilityReporter'
 import Head from 'next/head'
 
@@ -25,7 +26,7 @@ export const inter = Inter({
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
 })
 
-function App({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     axeAccessibilityReporter()
   }, [])
@@ -50,4 +51,4 @@ function App({ Component, pageProps }: AppProps) {
   )
 }
 
-export default App
+export default trpc.withTRPC(MyApp)
