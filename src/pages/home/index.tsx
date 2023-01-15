@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next'
 import { getPlaiceholder } from 'plaiceholder'
+
 import { Card } from './Card'
 
 const imgFeature1 = '/home/feature_1.png'

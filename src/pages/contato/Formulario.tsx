@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 import { Subtitle } from 'components'
 import { useSelect } from 'stores/useSelect'
+import { trpc } from 'utils/trpc'
 
 const TOAST_CONFIG: ToastOptions = {
   position: 'top-right',
@@ -17,7 +18,7 @@ const TOAST_CONFIG: ToastOptions = {
   progress: undefined,
 }
 
-const emailFormSchema = z.object({
+export const emailFormSchema = z.object({
   nome: z
     .string()
     .min(3, { message: 'O nome requer no mínimo 3 carácteres' })
@@ -36,11 +37,13 @@ const emailFormSchema = z.object({
     .string()
     .min(8, { message: 'A mensagem requer no mínimo 8 carácteres' })
     .max(13, { message: 'A mensagem requer no máximo 13 carácteres' }),
+  service: z.string(),
 })
 
-type FormValues = z.infer<typeof emailFormSchema> & { service: Select }
+type FormValues = z.infer<typeof emailFormSchema>
 
 export function Formulario() {
+  const { mutateAsync: trpcSendEmail } = trpc.sendEmail.useMutation()
   const toastLoadingId = useId()
   const toastErrorId = useId()
   const { select, setSelect } = useSelect()
@@ -101,34 +104,27 @@ export function Formulario() {
         })
 
       loadingToast()
-
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...values, service: select }),
-      })
-
-      if (response.status === 200) {
-        toast.update(toastLoadingId, {
-          ...TOAST_CONFIG,
-          render: 'E-mail enviado com Sucesso!',
-          type: toast.TYPE.SUCCESS,
-          autoClose: 2500,
+      await trpcSendEmail(values)
+        .then(() => {
+          toast.update(toastLoadingId, {
+            ...TOAST_CONFIG,
+            render: 'E-mail enviado com Sucesso!',
+            type: toast.TYPE.SUCCESS,
+            autoClose: 2500,
+          })
+          reset()
         })
-        reset()
-      }
-
-      if (response.status === 500) {
-        toast.update(toastLoadingId, {
-          ...TOAST_CONFIG,
-          render: 'Erro ao enviar e-mail!',
-          type: toast.TYPE.ERROR,
-          autoClose: 2500,
-        })
-      }
+        .catch((error) =>
+          toast.update(toastLoadingId, {
+            ...TOAST_CONFIG,
+            render: error.message,
+            type: toast.TYPE.ERROR,
+            autoClose: 2500,
+          }),
+        )
     },
 
-    [reset, select, toastLoadingId],
+    [reset, toastLoadingId, trpcSendEmail],
   )
 
   const onChange = watch('service') as Select
