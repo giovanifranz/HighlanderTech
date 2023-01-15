@@ -1,5 +1,5 @@
 import { createTransport } from 'utils/nodemailer'
-import { inferAsyncReturnType } from '@trpc/server'
+import type { inferAsyncReturnType } from '@trpc/server'
 
 export async function createContext() {
   return {

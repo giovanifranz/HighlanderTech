@@ -1,7 +1,8 @@
 import { useCallback } from 'react'
 import { BsArrowRight } from 'react-icons/bs'
 import { useSelect } from 'stores/useSelect'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
+import type { StaticImageData } from 'next/image'
 import { useRouter } from 'next/router'
 
 import { Subtitle, Title } from 'components'
