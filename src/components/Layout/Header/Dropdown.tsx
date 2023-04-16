@@ -33,7 +33,7 @@ export default function Dropdown() {
         <Image src={imgMenu} width="40" height="20" alt="" />
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
-        <DropdownMenu.Content className="flex w-40 flex-col gap-2 bg-white pt-8 pb-4 pr-6">
+        <DropdownMenu.Content className="flex w-40 flex-col gap-2 bg-white pb-4 pr-6 pt-8">
           <MenuItem href="/" label="Home" />
           <MenuItem href="/quem-somos" label="Quem Somos" />
           <MenuItem href="/portfolio" label="Portfólio" />
