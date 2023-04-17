@@ -4,7 +4,7 @@ import highlanderLogo from '../../assets/svgs/logo.svg'
 
 function Logo() {
   return (
-    <Link href="/">
+    <Link href="/" passHref>
       <Image
         src={highlanderLogo}
         alt="Highlander Tech"
