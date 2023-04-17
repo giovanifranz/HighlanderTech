@@ -15,7 +15,7 @@ npm run dev
 <br />
 
 <a href="https://www.highlandertech.com.br/">
-  <img src="https://raw.githubusercontent.com/giovanifranz/HighlanderTech/deprecated/public/Logo-Tech-AF-01.png" alt="Logo HighlanderTech">
+  <img src="https://raw.githubusercontent.com/Highlander-Tech/HighlanderTech/main/public/social.jpg" alt="Logo HighlanderTech">
 </a>
 
 </br>
