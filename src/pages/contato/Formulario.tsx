@@ -65,7 +65,7 @@ export function Formulario() {
   })
 
   const ValidateForm = useCallback(() => {
-    const errorToast = (message?: string) =>
+    const errorToast = (message: string) =>
       toast(message, {
         ...TOAST_CONFIG,
         autoClose: 1500,
@@ -73,16 +73,16 @@ export function Formulario() {
         toastId: toastErrorId,
       })
 
-    if (errors.nome) {
+    if (errors.nome?.message) {
       errorToast(errors.nome.message)
     }
-    if (errors.email) {
+    if (errors.email?.message) {
       errorToast(errors.email.message)
     }
-    if (errors.telefone) {
+    if (errors.telefone?.message) {
       errorToast(errors.telefone.message)
     }
-    if (errors.mensagem) {
+    if (errors.mensagem?.message) {
       errorToast(errors.mensagem.message)
     }
   }, [
@@ -158,14 +158,14 @@ export function Formulario() {
             <input
               type="text"
               id="nome"
-              className="w-full rounded border border-solid border-black p-2"
+              className="w-full rounded border border-solid border-black p-2 focus:border-2 focus:border-purple-500 focus:outline-none"
               {...register('nome')}
             />
           </div>
           <div className="flex w-1/2 flex-col">
             <label htmlFor="service">Serviço</label>
             <select
-              className="w-full rounded border border-solid border-black bg-white p-2"
+              className="w-full rounded border border-solid border-black bg-white p-2 focus:border-2 focus:border-purple-500 focus:outline-none"
               id="service"
               value={select}
               {...register('service')}
@@ -181,8 +181,8 @@ export function Formulario() {
             <label htmlFor="telefone">Telefone</label>
             <input
               type="text"
-              className="w-full rounded border border-solid border-black p-2"
               id="telefone"
+              className="w-full rounded border border-solid border-black p-2 focus:border-2 focus:border-purple-500 focus:outline-none"
               {...register('telefone')}
             />
           </div>
@@ -191,7 +191,7 @@ export function Formulario() {
             <input
               type="email"
               id="email"
-              className="w-full rounded border border-solid border-black p-2"
+              className="w-full rounded border border-solid border-black p-2 focus:border-2 focus:border-purple-500 focus:outline-none"
               {...register('email')}
             />
           </div>
@@ -199,7 +199,7 @@ export function Formulario() {
         <section className="h-48 w-full lg:h-60">
           <label htmlFor="mensagem">Mensagem</label>
           <textarea
-            className="h-full w-full rounded border border-solid border-black p-2"
+            className="h-full w-full rounded border border-solid border-black p-2 focus:border-2 focus:border-purple-500 focus:outline-none"
             id="mensagem"
             {...register('mensagem')}
           />

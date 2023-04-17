@@ -35,15 +35,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Highlander Tech</title>
-        <style jsx global>
-          {`
-            :root {
-              --inter-font: ${inter.style.fontFamily};
-            }
-          `}
-        </style>
       </Head>
-      <Layout>
+      <Layout className={inter.className}>
         <Component {...pageProps} />
         <Analytics />
       </Layout>
