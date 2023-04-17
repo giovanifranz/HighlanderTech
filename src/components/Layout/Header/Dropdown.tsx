@@ -1,8 +1,7 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import Image from 'next/image'
-import { useCallback } from 'react'
-import { useRouter } from 'next/router'
 import imgMenu from '../../../assets/svgs/menu.svg'
+import Link from 'next/link'
 
 type Props = {
   href: string
@@ -10,18 +9,9 @@ type Props = {
 }
 
 function MenuItem({ href, label }: Props) {
-  const router = useRouter()
-
-  const handleClick = useCallback(async () => {
-    await router.push(href)
-  }, [href, router])
-
   return (
-    <DropdownMenu.Item
-      className="text-right text-lg text-gray-900"
-      onClick={handleClick}
-    >
-      <a>{label}</a>
+    <DropdownMenu.Item className="text-right text-lg text-gray-900">
+      <Link href={href}>{label}</Link>
     </DropdownMenu.Item>
   )
 }

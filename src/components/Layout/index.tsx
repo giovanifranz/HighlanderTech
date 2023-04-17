@@ -1,4 +1,4 @@
-import type { ReactNode, HtmlHTMLAttributes } from 'react'
+import type { HtmlHTMLAttributes } from 'react'
 import { Seo } from 'components'
 import { Footer } from './Footer'
 import { Header } from './Header'
