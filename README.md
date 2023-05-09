@@ -26,3 +26,4 @@ npm run dev
 | :-: |
 |[Linkedin](https://www.linkedin.com/in/giovanifranz)|
 |[Email](mailto:giovanifranz151@gmail.com)|
+
