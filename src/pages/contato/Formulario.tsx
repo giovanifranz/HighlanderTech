@@ -35,8 +35,8 @@ export const emailFormSchema = z.object({
     .max(250, { message: 'A mensagem requer no máximo 250 carácteres' }),
   telefone: z
     .string()
-    .min(8, { message: 'A mensagem requer no mínimo 8 carácteres' })
-    .max(13, { message: 'A mensagem requer no máximo 13 carácteres' }),
+    .min(11, 'Digite apenas os números, com DDD incluso')
+    .max(11, 'Digite apenas os números, com DDD incluso'),
   service: z.string(),
 })
 
@@ -64,7 +64,7 @@ export function Formulario() {
     resolver: zodResolver(emailFormSchema),
   })
 
-  const ValidateForm = useCallback(() => {
+  const validateForm = useCallback(() => {
     const errorToast = (message: string) =>
       toast(message, {
         ...TOAST_CONFIG,
@@ -94,36 +94,34 @@ export function Formulario() {
   ])
 
   const sendEmail = useCallback(
-    async (values: FormValues) => {
-      const loadingToast = () =>
-        toast('E-mail já está sendo enviado!', {
-          ...TOAST_CONFIG,
-          autoClose: 12000,
-          type: toast.TYPE.INFO,
-          toastId: toastLoadingId,
-        })
-
-      loadingToast()
-      await trpcSendEmail(values)
-        .then(() => {
-          toast.update(toastLoadingId, {
+    async (data: FormValues) => {
+      try {
+        const loadingToast = () =>
+          toast('E-mail já está sendo enviado!', {
             ...TOAST_CONFIG,
-            render: 'E-mail enviado com Sucesso!',
-            type: toast.TYPE.SUCCESS,
-            autoClose: 2500,
+            autoClose: 12000,
+            type: toast.TYPE.INFO,
+            toastId: toastLoadingId,
           })
-          reset()
+        loadingToast()
+        await trpcSendEmail(data)
+        toast.update(toastLoadingId, {
+          ...TOAST_CONFIG,
+          render: 'E-mail enviado com Sucesso!',
+          type: toast.TYPE.SUCCESS,
+          autoClose: 2500,
         })
-        .catch((error) =>
-          toast.update(toastLoadingId, {
-            ...TOAST_CONFIG,
-            render: error.message,
-            type: toast.TYPE.ERROR,
-            autoClose: 2500,
-          }),
-        )
+        reset()
+      } catch (error) {
+        toast.update(toastLoadingId, {
+          ...TOAST_CONFIG,
+          render: 'Erro ao enviar e-mail',
+          type: toast.TYPE.ERROR,
+          autoClose: 2500,
+        })
+        console.log(error)
+      }
     },
-
     [reset, toastLoadingId, trpcSendEmail],
   )
 
@@ -206,7 +204,7 @@ export function Formulario() {
         </section>
         <button
           disabled={isSubmitting}
-          onClick={ValidateForm}
+          onClick={validateForm}
           className="absolute bottom-0 right-0 h-10 w-36 rounded bg-purple-500 text-lg font-bold text-white transition-all hover:opacity-80"
           id="enviar"
           name="enviar"

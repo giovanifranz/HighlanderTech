@@ -1,6 +1,7 @@
 import { emailFormSchema } from 'pages/contato/Formulario'
 import { procedure, router } from '../trpc'
 import { TRPCError } from '@trpc/server'
+import type { SendMailOptions } from 'nodemailer'
 
 export const appRouter = router({
   sendEmail: procedure
@@ -20,9 +21,9 @@ export const appRouter = router({
         },
       })
 
-      const mailData = {
+      const mailData: SendMailOptions = {
         to: 'comercial@highlandertech.com.br',
-        from: 'comercial@highlandertech.com.br',
+        replyTo: email,
         cc: 'giovanifranz151@gmail.com',
         subject: `Nome: ${nome} / Serviço: ${service}`,
         html: `Telefone: ${telefone} <br> E-mail: ${email} <br> Mensagem: ${mensagem}`,
