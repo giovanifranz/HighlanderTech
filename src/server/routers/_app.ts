@@ -23,6 +23,7 @@ export const appRouter = router({
 
       const mailData: SendMailOptions = {
         from: 'comercial@highlandertech.com.br',
+        to: 'comercial@highlandertech.com.br',
         replyTo: email,
         cc: 'giovanifranz151@gmail.com',
         subject: `Nome: ${nome} / Serviço: ${service}`,
