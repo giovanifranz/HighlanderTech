@@ -1,1 +1,0 @@
-export { createTransport } from 'nodemailer'

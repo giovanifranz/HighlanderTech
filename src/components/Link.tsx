@@ -1,23 +1,7 @@
-import type { PropsWithChildren } from 'react'
 import NextLink from 'next/link'
+import tw from 'tailwind-styled-components'
 
-type Props = PropsWithChildren<{
-  href: string
-  target?: string
-}>
-
-function Link({ href, target, children }: Props) {
-  return (
-    <NextLink
-      href={href}
-      rel="noreferrer"
-      target={target}
-      className="transition-all hover:opacity-70"
-    >
-      {children}
-    </NextLink>
-  )
-}
-
-export { Link }
-export type { Props as LinkProps }
+export const Link = tw(NextLink)`
+  transition-all
+  hover:opacity-70
+`
