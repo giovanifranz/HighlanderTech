@@ -2,6 +2,9 @@ import { Subtitle, Title } from '@/components'
 import * as S from './styles'
 import { Card } from './Card'
 
+import entremalhas from '@/assets/portfolio/entremalhas.webp'
+import oriental from '@/assets/portfolio/oriental.webp'
+
 export default function Portfolio() {
   return (
     <S.Container>
@@ -16,17 +19,12 @@ export default function Portfolio() {
       </article>
       <S.Cards>
         <Card
-          image="kyra"
-          href="https://www.kyra.com.br/"
-          text="Kyra Pesquisa"
-        />
-        <Card
-          image="entremalhas"
+          image={entremalhas}
           href="https://entremalhas.com.br/"
           text="Entremalhas"
         />
         <Card
-          image="oriental"
+          image={oriental}
           href="https://oriental.highlandertech.com.br/"
           text="Oriental Wing Chun"
           demo

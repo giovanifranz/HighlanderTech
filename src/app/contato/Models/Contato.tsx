@@ -8,9 +8,9 @@ type Props = {
   isPurple?: boolean
 }
 
-export function Contato({ Icon, title, description, isPurple }: Props) {
+export function Contato({ Icon, title, description, isPurple = false }: Props) {
   return (
-    <S.Container isPurple={isPurple}>
+    <S.Container $purple={isPurple}>
       <Icon size={55} />
       <S.Title>{title}</S.Title>
       <S.Description>{description}</S.Description>

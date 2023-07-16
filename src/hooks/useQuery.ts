@@ -1,17 +1,15 @@
+import { serviceStore } from '@/store/serviceStore'
 import { useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 export function useQuery() {
   const searchParams = useSearchParams()
-  const [service, setService] = useState('sites')
-
   const selected = searchParams.get('service')
+  const setService = serviceStore((state) => state.setService)
 
   useEffect(() => {
     if (selected && ['sites', 'maintenance', 'mounting'].includes(selected)) {
-      setService(selected)
+      setService(selected as Select)
     }
   }, [selected])
-
-  return { service }
 }

@@ -1,5 +1,4 @@
 'use client'
-
 import Image from 'next/image'
 import imgMenu from '@/assets/svgs/menu.svg'
 import Link from 'next/link'

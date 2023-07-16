@@ -22,6 +22,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="pt-BR" className="scroll-smooth antialiased">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body
         className={
           inter.className + 'relative overflow-x-hidden bg-cyan-200 text-black'
@@ -32,18 +35,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           {children}
         </div>
         <Footer />
-        <ToastContainer
-          className="z-50"
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
+        <ToastContainer />
       </body>
     </html>
   )

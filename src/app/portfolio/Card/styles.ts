@@ -1,45 +1,40 @@
 import Link from 'next/link'
 import tw from 'tailwind-styled-components'
 
-type ContainerProps = {
-  image: 'oriental' | 'entremalhas' | 'kyra'
-}
-
-export const Container = tw(Link)<ContainerProps>`
-${({ image }) => `bg-${image}`}
-relative 
-flex 
-h-52 
-w-4/5 
-max-w-[352px] 
-justify-center 
-rounded-3xl 
-bg-cover 
-bg-center 
+export const Container = tw(Link)`
+relative
+flex
+h-52
+w-4/5
+max-w-[352px]
+justify-center
+rounded-3xl
+bg-cover
+bg-center
 hover:opacity-75
 `
 
 export const Content = tw.div`
-absolute 
-bottom-0 
-flex 
-w-full 
-flex-col 
-items-center 
-gap-2 
-rounded-b-3xl 
-bg-black/50 
-p-2 
+absolute
+bottom-0
+flex
+w-full
+flex-col
+items-center
+gap-2
+rounded-b-3xl
+bg-black/50
+p-2
 text-center`
 
 export const Demo = tw.span`
-absolute 
+absolute
 bottom-2
-right-4 
-text-lg 
+right-4
+text-lg
 text-white
 `
 export const Subtitle = tw.h2`
-text-2xl 
+text-2xl
 text-white
 `

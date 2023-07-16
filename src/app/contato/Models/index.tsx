@@ -1,15 +1,14 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { SEU_PLANO, SUA_DUVIDA, SUA_VISAO, modelsContatos } from './Models'
-type Props = {
-  service: string | null
-}
+import { serviceStore } from '@/store/serviceStore'
 
-export function Models({ service }: Props) {
+export function Models() {
+  const service = serviceStore((store) => store.service)
   const [selected, setSelected] = useState([SEU_PLANO, SUA_VISAO])
 
   useEffect(() => {
-    setSelected(modelsContatos[service || ''] || [SEU_PLANO, SUA_VISAO])
+    setSelected(modelsContatos[service] || [SEU_PLANO, SUA_VISAO])
   }, [service])
 
   return (

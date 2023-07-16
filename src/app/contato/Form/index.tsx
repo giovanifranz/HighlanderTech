@@ -2,16 +2,17 @@
 import { Subtitle } from '@/components'
 import * as S from './styles'
 import { useQuery, useForm } from '@/hooks'
+import { serviceStore } from '@/store/serviceStore'
 
 export function Form() {
-  const { service } = useQuery()
-  const { handleSubmit, isSubmitting, register } = useForm(service)
+  const { isSubmitting, register, onSubmit } = useForm()
+  const service = serviceStore((store) => store.service)
+  useQuery()
 
   return (
     <S.Container>
       <Subtitle>Solicite seu orçamento!</Subtitle>
-
-      <S.Form onSubmit={handleSubmit((value) => console.log(value))}>
+      <S.Form onSubmit={onSubmit}>
         <S.Content>
           <S.Box>
             <label htmlFor="nome">Nome</label>
@@ -19,7 +20,7 @@ export function Form() {
           </S.Box>
           <S.Box>
             <label htmlFor="service">Serviço</label>
-            <S.Select id="service" value={service} {...register('service')}>
+            <S.Select value={service} {...register('service')}>
               <option value="sites">Sites</option>
               <option value="maintenance">Manutenção</option>
               <option value="mounting">Montagem</option>
@@ -29,16 +30,16 @@ export function Form() {
         <S.Content>
           <S.Box>
             <label htmlFor="telefone">Telefone</label>
-            <S.Input type="text" id="telefone" {...register('telefone')} />
+            <S.Input type="text" {...register('telefone')} />
           </S.Box>
           <S.Box>
             <label htmlFor="email">E-mail</label>
-            <S.Input type="email" id="email" {...register('email')} />
+            <S.Input type="email" {...register('email')} />
           </S.Box>
         </S.Content>
         <section className="h-48 w-full lg:h-60">
           <label htmlFor="mensagem">Mensagem</label>
-          <S.TextArea id="mensagem" {...register('mensagem')} />
+          <S.TextArea {...register('mensagem')} />
         </section>
         <S.Button
           disabled={isSubmitting}
