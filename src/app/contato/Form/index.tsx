@@ -1,8 +1,11 @@
 'use client'
-import { Subtitle } from '@/components'
-import * as S from './styles'
 import { useQuery, useForm } from '@/hooks'
+
+import { Subtitle } from '@/components'
+
 import { serviceStore } from '@/store/serviceStore'
+
+import * as S from './styles'
 
 export function Form() {
   const { isSubmitting, register, onSubmit } = useForm()

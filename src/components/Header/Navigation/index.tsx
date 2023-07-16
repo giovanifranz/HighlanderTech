@@ -1,4 +1,5 @@
 import { Link } from '@/components'
+
 import * as S from './styles'
 
 export function Navigation() {

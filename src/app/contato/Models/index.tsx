@@ -1,7 +1,9 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { SEU_PLANO, SUA_DUVIDA, SUA_VISAO, modelsContatos } from './Models'
+
 import { serviceStore } from '@/store/serviceStore'
+
+import { SEU_PLANO, SUA_DUVIDA, SUA_VISAO, modelsContatos } from './Models'
 
 export function Models() {
   const service = serviceStore((store) => store.service)

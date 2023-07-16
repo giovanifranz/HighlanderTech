@@ -1,5 +1,5 @@
-import { Form } from './Form'
 import { Cards } from './Cards'
+import { Form } from './Form'
 
 export default function Contato() {
   return (
