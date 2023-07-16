@@ -1,5 +1,7 @@
 import Image from 'next/image'
+
 import { Subtitle, Title } from '@/components'
+
 import * as S from './styles'
 
 export function Fazemos() {

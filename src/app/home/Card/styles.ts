@@ -1,6 +1,7 @@
-import tw from 'tailwind-styled-components'
-import { BsArrowRight, BsArrowLeft } from 'react-icons/bs'
 import NextLink from 'next/link'
+import { BsArrowRight, BsArrowLeft } from 'react-icons/bs'
+
+import tw from 'tailwind-styled-components'
 
 const ContainerBase = tw.section`
 mx-0 

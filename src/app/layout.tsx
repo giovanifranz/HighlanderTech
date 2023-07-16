@@ -1,13 +1,14 @@
-import { Footer } from '@/components/Footer'
-import { Header } from '@/components/Header'
-import type { PropsWithChildren } from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import type { PropsWithChildren } from 'react'
 import '@/styles/global.css'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 
-const inter = Inter({ subsets: ['latin'] })
+import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
+
+const inter = Inter({ subsets: ['latin'], fallback: ['sans-serif'] })
 
 export const metadata: Metadata = {
   title: 'Highlander Tech',

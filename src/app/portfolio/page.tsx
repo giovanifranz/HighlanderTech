@@ -1,9 +1,10 @@
-import { Subtitle, Title } from '@/components'
-import * as S from './styles'
-import { Card } from './Card'
-
 import entremalhas from '@/assets/portfolio/entremalhas.webp'
 import oriental from '@/assets/portfolio/oriental.webp'
+
+import { Subtitle, Title } from '@/components'
+
+import { Card } from './Card'
+import * as S from './styles'
 
 export default function Portfolio() {
   return (

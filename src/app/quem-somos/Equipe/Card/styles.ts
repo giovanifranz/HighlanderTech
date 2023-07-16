@@ -1,5 +1,6 @@
-import tw from 'tailwind-styled-components'
 import { TiSocialLinkedinCircular } from 'react-icons/ti'
+
+import tw from 'tailwind-styled-components'
 
 export const Container = tw.div`
 flex 

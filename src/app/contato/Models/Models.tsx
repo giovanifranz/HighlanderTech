@@ -3,6 +3,7 @@ import { FaRegMoneyBillAlt } from 'react-icons/fa'
 import { GiConsoleController } from 'react-icons/gi'
 import { MdOutlineReportProblem } from 'react-icons/md'
 import { RiComputerLine, RiFileEditLine } from 'react-icons/ri'
+
 import { Contato } from './Contato'
 
 export const SUA_DUVIDA = (

@@ -1,5 +1,5 @@
-import * as S from './styles'
 import { Card } from './Card'
+import * as S from './styles'
 
 export async function Home() {
   return (

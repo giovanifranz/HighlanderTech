@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
-import * as S from './styles'
+
 import { Subtitle, Title } from '@/components'
+
 import { Action } from './Action'
+import * as S from './styles'
 
 type Props = {
   title: string

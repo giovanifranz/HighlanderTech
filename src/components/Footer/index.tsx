@@ -1,4 +1,5 @@
 import { Link, Logo } from '@/components'
+
 import * as S from './styles'
 
 export function Footer() {

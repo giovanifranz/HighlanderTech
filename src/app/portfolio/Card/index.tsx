@@ -1,5 +1,7 @@
 import Image, { StaticImageData } from 'next/image'
+
 import imgArrow from '@/assets/svgs/arrow.svg'
+
 import * as S from './styles'
 
 type Props = {
