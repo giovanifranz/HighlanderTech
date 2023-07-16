@@ -2,10 +2,7 @@ const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     colors: {
       white: '#fff',
@@ -23,8 +20,10 @@ module.exports = {
       black: '#18191F',
       transparent: 'transparent',
     },
-    fontFamily: {
-      base: ['Inter', 'sans-serif'],
+    backgroundImage: {
+      entremalhas: "url('/portfolio/entremalhas.webp')",
+      kyra: "url('/portfolio/kyra.webp')",
+      oriental: "url('/portfolio/oriental.webp')",
     },
   },
 }

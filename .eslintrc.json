@@ -3,9 +3,5 @@
     "@rocketseat/eslint-config/react",
     "next/core-web-vitals",
     "plugin:tailwindcss/recommended"
-  ],
-  "rules": {
-    "no-undef": "off",
-    "no-unused-vars": "off"
-  }
+  ]
 }
