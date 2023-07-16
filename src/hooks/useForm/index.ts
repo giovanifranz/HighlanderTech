@@ -35,6 +35,7 @@ export function useForm() {
           fetch('/api/email', {
             method: 'POST',
             body: JSON.stringify(payload),
+            cache: 'no-store',
           }),
           {
             pending: 'Enviando e-mail...',
