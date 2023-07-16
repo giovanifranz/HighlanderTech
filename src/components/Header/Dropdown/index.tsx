@@ -1,8 +1,9 @@
 'use client'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import imgMenu from '@/assets/svgs/menu.svg'
+
+import { Image } from '@/components'
 
 import * as S from './styles'
 

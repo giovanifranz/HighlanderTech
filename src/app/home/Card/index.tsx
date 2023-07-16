@@ -1,7 +1,6 @@
-import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
 
-import { Subtitle, Title } from '@/components'
+import { Subtitle, Title, Image } from '@/components'
 
 import { Action } from './Action'
 import * as S from './styles'

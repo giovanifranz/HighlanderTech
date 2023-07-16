@@ -1,6 +1,4 @@
-import Image from 'next/image'
-
-import { Subtitle, Title } from '@/components'
+import { Subtitle, Title, Image } from '@/components'
 
 import * as S from './styles'
 
