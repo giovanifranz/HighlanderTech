@@ -9,6 +9,8 @@ const bodySchema = z.object({
   mensagem: z.string(),
 })
 
+export const runtime = 'edge'
+
 export async function POST(request: Request) {
   try {
     const payload = await request.json()

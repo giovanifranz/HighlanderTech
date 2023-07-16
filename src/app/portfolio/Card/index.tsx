@@ -1,6 +1,8 @@
-import Image, { StaticImageData } from 'next/image'
+import type { StaticImageData } from 'next/image'
 
 import imgArrow from '@/assets/svgs/arrow.svg'
+
+import { Image } from '@/components'
 
 import * as S from './styles'
 
