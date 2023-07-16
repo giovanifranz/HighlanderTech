@@ -2,6 +2,7 @@ import { useCallback, useEffect } from 'react'
 import { useForm as useReactHookForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 
+import { sendEmail } from '@/services/sendEmail'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { serviceStore } from '@/store/serviceStore'
@@ -31,19 +32,11 @@ export function useForm() {
   const onSubmit = useCallback(
     async (payload: Payload) => {
       try {
-        await toast.promise(
-          fetch('/api/email', {
-            method: 'POST',
-            body: JSON.stringify(payload),
-            cache: 'no-store',
-          }),
-          {
-            pending: 'Enviando e-mail...',
-            success: 'E-mail enviado com sucesso!',
-            error:
-              'Ocorreu um erro ao enviar o e-mail, tente novamente mais tarde!',
-          },
-        )
+        await toast.promise(sendEmail(payload), {
+          pending: 'Enviando e-mail...',
+          success: 'E-mail enviado com sucesso!',
+          error: 'Ocorreu um erro ao enviar o e-mail!',
+        })
         reset()
       } catch (error) {
         console.error(error)
