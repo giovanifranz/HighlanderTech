@@ -1,8 +1,9 @@
-import withPlaiceholder from '@plaiceholder/next'
-
 /**
  * @type {import('next').NextConfig}
  */
-const config = {}
+const config = {
+  swcMinify: true,
+  reactStrictMode: true,
+}
 
-export default withPlaiceholder(config)
+export default config
