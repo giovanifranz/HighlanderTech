@@ -20,17 +20,24 @@ export default function Portfolio() {
         </S.Note>
       </article>
       <S.Cards>
-        <Card image={kyra} href="https://kyra.com.br/" text="Kyra" />
+        <Card
+          image={kyra}
+          href="https://kyra.com.br/"
+          text="Kyra"
+          referrerPolicy="no-referrer"
+        />
         <Card
           image={entremalhas}
           href="https://entremalhas.com.br/"
           text="Entremalhas"
+          referrerPolicy="no-referrer"
         />
         <Card
           image={oriental}
           href="https://oriental.highlandertech.com.br/"
           text="Oriental Wing Chun"
           demo
+          referrerPolicy="same-origin"
         />
       </S.Cards>
     </S.Container>
