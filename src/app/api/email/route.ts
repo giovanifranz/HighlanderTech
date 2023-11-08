@@ -1,6 +1,8 @@
 import { Client } from 'postmark'
 import { z } from 'zod'
 
+import { env } from '@/utils/env'
+
 const bodySchema = z.object({
   nome: z.string(),
   service: z.string(),
@@ -9,23 +11,27 @@ const bodySchema = z.object({
   mensagem: z.string(),
 })
 
-// export const runtime = 'edge'
-
 export async function POST(request: Request) {
-  try {
-    const payload = await request.json()
-    const { email, mensagem, nome, service, telefone } =
-      bodySchema.parse(payload)
+  const payload = await request.json()
+  const result = bodySchema.safeParse(payload)
 
-    const client = new Client(process.env.POSTMARK_API_KEY || '')
-    await client.sendEmail({
+  if (!result.success) {
+    return new Response('Payload inválido', { status: 406 })
+  }
+
+  const { email, mensagem, nome, service, telefone } = result.data
+
+  const client = new Client(env.POSTMARK_API_KEY)
+
+  return await client
+    .sendEmail({
       From: 'comercial@highlandertech.com.br',
       To: 'comercial@highlandertech.com.br',
       Subject: `Nome: ${nome} / Serviço: ${service}`,
       HtmlBody: `Telefone: ${telefone} <br> E-mail: ${email} <br> Mensagem: ${mensagem}`,
     })
-    return new Response('E-mail enviado com sucesso', { status: 200 })
-  } catch (error) {
-    return new Response('Erro ao enviar e-mail', { status: 500 })
-  }
+    .then(() => new Response('E-mail enviado com sucesso', { status: 200 }))
+    .catch(
+      () => new Response('Ocorreu um erro ao enviar o e-mail', { status: 500 }),
+    )
 }

@@ -1,4 +1,5 @@
 import entremalhas from '@/assets/portfolio/entremalhas.webp'
+import kyra from '@/assets/portfolio/kyra.png'
 import oriental from '@/assets/portfolio/oriental.webp'
 
 import { Subtitle, Title } from '@/components'
@@ -19,6 +20,7 @@ export default function Portfolio() {
         </S.Note>
       </article>
       <S.Cards>
+        <Card image={kyra} href="https://kyra.com.br/" text="Kyra" />
         <Card
           image={entremalhas}
           href="https://entremalhas.com.br/"

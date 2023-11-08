@@ -1,8 +1,7 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import highlanderLogo from '@/assets/svgs/logo.svg'
-
-import { Image } from '@/components'
 
 export function Logo() {
   return (

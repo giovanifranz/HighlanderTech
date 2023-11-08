@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 import { serviceStore } from '@/store/serviceStore'
 
-import { Payload, formSchema } from './schema'
+import { type Payload, formSchema } from './schema'
 
 export function useForm() {
   const { service, setService } = serviceStore()
