@@ -23,7 +23,7 @@ export function Fazemos() {
         <S.Paragraph>
           A Highlander Tech é uma empresa que presta serviços de montagem e
           manutenção de computadores, completo com consultoria, além da criação
-          de sites para pequenos negócios que querem entrar entrar no mundo
+          de sites para pequenos negócios que querem entrar no mundo
           digital.
         </S.Paragraph>
         <S.Paragraph className="-mt-2">
